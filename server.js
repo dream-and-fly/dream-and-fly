@@ -49,7 +49,7 @@ server.get("/", (req, res) => {
 
 // For any route that is not specified
 server.get("*", (req, res) => {
-  res.render("./pages/404page");
+  res.render("pages/404page");
 });
 
 //Connect to dataBase then listen to the PORT
