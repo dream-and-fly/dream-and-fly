@@ -1,11 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../../layouts/head') %>
+<%- include('../../layouts/head') %>
+  <style>
+    .__admin_div {
+      width: 80%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .__admin_div section {
+      background-color: rgba(204, 64, 185, 0.392);
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column-reverse;
+    }
+
+    .__admin_div section img {
+      width: 60%;
+    }
+
+    .__admin_div button {
+      background-color: rebeccapurple;
+    }
+
+    .__admin_div .__admin_update {
+      display: none;
+    }
+
+    .__admin_update_btn_form {
+      display: none;
+    }
+
+    .__admin_div .__admin_update * {
+      width: 99%;
+      min-height: 25px;
+      margin-bottom: 5px;
+    }
+  </style>
+
   <body>
     <%- include('../../layouts/header') %>
-    <!-- Your code here -->
+      <!-- Your code here -->
 
-    <%- include('../../layouts/footer') %> <%- include('../../layouts/scripts')
-    %>
+      <div class="__admin_div">
+        <% articlesData.forEach((item,index)=>{ %>
+          <section>
+            <img src="<%=item.image %>">
+            <h2>
+              <%=item.date %>
+            </h2>
+            <h4>
+              <%=item.title%>
+            </h4>
+            <p>
+              <%=item.author %>
+            </p>
+            <!-- <h3>
+                <%=item.description %>
+              </h3> -->
+            <section class="__admin_add">
+              <form action="/articles/admin" method="POST">
+                <input type="hidden" name="image" value="<%=item.image%>">
+                <input type="hidden" name="title" value="<%=item.title%>">
+                <input type="hidden" name="author" value="<%=item.author%>">
+                <input type="hidden" name="description" value="<%=item.description%>">
+                <input type="hidden" name="date" value="<%=item.date%>">
+                <button type="submit">Add</button>
+              </form>
+            </section>
+
+            <section class="__admin_delete">
+              <form action="/articles/admin?_method=delete" method="POST">
+                <input type="hidden" name="id" value="<%=item.id%>">
+                <button>DELETE</button>
+              </form>
+            </section>
+
+            <section>
+              <button onclick="myFunction()" id="<%=item.id%>">UPDATE</button>
+              <section>
+                <form class="__admin_update __admin_update<%=item.id%>" action="/articles/admin?_method=put"
+                  method="POST">
+                  <input type="text" name="title" value=" <%= item.title  %> " placeholder="title" />
+                  <input type="text" name="author" value="<%= item.author  %>" placeholder="author" />
+                  <input type="text" name="date" value="<%= item.date  %>" placeholder="date" />
+                  <input type="text" name="image" value="<%= item.image  %>" placeholder="image" />
+                  <textarea name="description" cols="30" rows="10" placeholder="description">
+                <%= item.description  %></textarea>
+                  <input type="hidden" name="id" value="<%=item.id%>">
+              </section>
+              <button class="__admin_update_btn_form  __admin_update_btn_form<%=item.id%>">UPDATE</button>
+              </form>
+            </section>
+
+          </section>
+
+          <% }) %>
+      </div>
+
+
+      <script>
+        function myFunction() {
+          console.log(event.target.id);
+          $(`.__admin_update${event.target.id}`).show();
+          $(`#${event.target.id}`).hide();
+          $(`.__admin_update_btn_form${event.target.id}`).show();
+        }
+      </script>
+      <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+      <%- include('../../layouts/footer') %>
+        <%- include('../../layouts/scripts') %>
   </body>
+
 </html>

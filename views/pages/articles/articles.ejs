@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../../layouts/head') %>
+<%- include('../../layouts/head') %>
+
   <body>
     <%- include('../../layouts/header') %>
-    <!-- Your code here -->
+      <!-- Your code here -->
 
-    <%- include('../../layouts/footer') %> <%- include('../../layouts/scripts')
-    %>
+      <div class="__admin_div">
+        <% articlesData.forEach((item,index)=>{ %>
+          <section>
+            <img src="<%=item.image %>">
+            <h2>
+              <%=item.date %>
+            </h2>
+            <h4>
+              <%=item.title%>
+            </h4>
+            <p>
+              <%=item.author %>
+            </p>
+            <h3>
+              <%=item.description %>
+            </h3>
+          </section>
+          <%})%>
+      </div>
+      <!--  end   -->
+      <%- include('../../layouts/footer') %>
+        <%- include('../../layouts/scripts') %>
   </body>
+
 </html>
