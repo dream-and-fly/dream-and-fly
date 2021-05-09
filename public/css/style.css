@@ -1,5 +1,6 @@
+@import "base.css";
 @import "reset.css";
-@import "404.css";
+@import "error.css";
 @import "about-us.css";
 @import "admin.css";
 @import "article.css";
