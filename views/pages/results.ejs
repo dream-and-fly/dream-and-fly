@@ -4,7 +4,13 @@
   <body>
     <%- include('../layouts/header') %>
     <!-- Your code here -->
-
+<section class="results__youtube">
+  <% youtube.forEach((element)=>{ %>
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= element.videoID %> " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  <%  }) %> 
+</section>
     <%- include('../layouts/footer') %> <%- include('../layouts/scripts') %>
   </body>
 </html>
