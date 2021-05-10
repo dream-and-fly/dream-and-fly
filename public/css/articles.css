@@ -1,0 +1,24 @@
+.articles_contanier {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  margin-left: 10%;
+}
+
+.articles_result {
+  grid-column: span 1;
+  grid-row: span 1;
+  background-color: #fad586;
+  margin: 5%;
+  padding: 2%;
+}
+img {
+  width: 70%;
+  margin-left: 15%;
+}
+.articles_result p {
+  position: relative;
+  height: 10%;
+  border: black solid 1px;
+}

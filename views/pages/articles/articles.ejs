@@ -1,27 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../../layouts/head') %>
+<!-- 
+<style>
+  .articles_contanier {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  margin-left: 10%;
+}
 
-  <body style="background-color: white;">
+.articles_result {
+  grid-column: span 1;
+  grid-row: span 1;
+  background-color: #fad586;
+  margin: 5%;
+  padding: 2%;
+}
+img{
+  width: 70%;
+  margin-left: 15%;
+}
+.articles_result p {
+  position:relative;
+  height: 20%;
+  border: black solid 1px;
+}
+
+</style> -->
+  <body>
     <%- include('../../layouts/header') %>
       <!-- Your code here -->
 
-      <div class="__admin_div">
+      <div class="articles_contanier">
         <% articlesDataforCustomer.forEach((item,index)=>{ %>
-          <section>
+          <section class="articles_result">
             <img src="<%=item.image %>">
             <h2>
-              <%=item.date %>
+              <%=item.title%>
             </h2>
             <h4>
-              <%=item.title%>
-            </h4>
-            <p>
               <%=item.author %>
-            </p>
-            <h3>
+
+            </h4>
+            <h5>
+              <%=item.date %>
+
+            </h5>
+            <p>
               <%=item.description %>
-            </h3>
+            </p>
             <form action="/articles/article/<%=item.id%>">
               <button type="submit">Read more →</button>
             </form>
