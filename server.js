@@ -49,12 +49,15 @@ server.get("/", (req, res) => {
 
 // For any route that is not specified
 server.get("*", (req, res) => {
-  res.render("pages/error");
+  res.render("pages/error", { title: "Error" });
 });
 
 //Connect to dataBase then listen to the PORT
-client.connect().then(() => {
-  server.listen(PORT, () =>
-    console.log(`Server running on port: http://localhost:${PORT}`)
-  );
-});
+// client.connect().then(() => {
+//   server.listen(PORT, () =>
+//     console.log(`Server running on port: http://localhost:${PORT}`)
+//   );
+// });
+server.listen(PORT, () =>
+  console.log(`Server running on port: http://localhost:${PORT}`)
+);
