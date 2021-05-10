@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "---- This is an alphabetical order, contribution is even ----",
   "main": "server.js",
-
   "scripts": {
     "devStart": "nodemon server.js"
   },

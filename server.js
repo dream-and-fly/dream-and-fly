@@ -24,6 +24,7 @@ server.use(methodOverride("_method"));
 // Articles route
 const articlesRoute = require("./routes/articles.js");
 server.use("/articles", articlesRoute);
+
 function City(serchQuery, items) {
   this.cityName = serchQuery;
   this.videoID = items.id.videoId;
@@ -32,33 +33,37 @@ function City(serchQuery, items) {
 }
 // results route ------- most IMPORTANT route ---- APIs here
 server.get("/results/:search_query", (req, res) => {
-  let URLparams = [req.params.search_query]; //Will be used in APIs functions as a search query
-  // APIs functions here
-  function youTubeApi(URLparams) {
-    let newcityData = [];
-    // let serchQuery =req.query.search;
-    let key = process.env.YOUTUBE_API_KEY;
-    let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=tourism+in+${URLparams}&type=video&videoCaption=any&videoDefinition=any&videoDimension=2d&videoDuration=medium&videoEmbeddable=true&videoType=any&key=${key}`;
-    superagent.get(url).then((cityData) => {
-      let gettedData = cityData.body.items;
-      newcityData = gettedData.map((items) => {
-        return new City(URLparams, items);
+  let URLparams = [req.params.search_query];
+  async function wait() {
+    async function youTubeApi(URLparams) {
+      let url = `http://api.positionstack.com/v1/forward?access_key=e68baa4a11e51629e2cee8145488b785&query=${URLparams}`;
+      return await superagent.get(url).then((cityData) => {
+        return cityData.body;
       });
-      console.log(newcityData);
-      // res.send(newcityData);
-      // res.render('video', {video:newcityData});
-      // res.render('index', {video:newcityData});
+    }
+    async function youTubeApi2(URLparams) {
+      let url = `http://api.positionstack.com/v1/forward?access_key=e68baa4a11e51629e2cee8145488b785&query=${URLparams}`;
+      return await superagent.get(url).then((cityData) => {
+        return cityData.body;
+      });
+    }
+    let x = [];
+    await youTubeApi(URLparams).then((result) => {
+      x.push(result.data);
     });
-    return newcityData;
+    let y = [];
+    await youTubeApi2(URLparams).then((result) => {
+      y.push(result.data);
+    });
+    console.log(x);
+    console.log(y);
+    res.render("pages/results", {
+      title: "results",
+      youtube: x,
+      youtube2: y,
+    });
   }
-  console.log(youTubeApi(URLparams));
-  // retreive reviews from DB
-
-  // render data on results/:search_query { title: "results", API1: "results",API2: "results",API3: "results",.......,Data from DB: "results", }
-  res.render("pages/results", {
-    title: "results",
-    youtube: youTubeApi(URLparams),
-  });
+  wait();
 });
 
 // To insert reviews into the DB
