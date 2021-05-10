@@ -21,12 +21,12 @@ router.get('/', function (req, res) {
     .then(result => {
       res.render('pages/articles/articles', {
         articlesDataforCustomer: result.rows,
+        title: 'Articles',
       });
     })
     .catch(err => {
       res.render('pages/error', { error: err });
     });
-  // res.render('pages/articles/articles', { title: 'articles' });
 });
 
 router.get('/admin', (req, res) => {
@@ -34,14 +34,14 @@ router.get('/admin', (req, res) => {
   client
     .query(SQL)
     .then(result => {
-      // console.log(result[0].rows);
       res.render('pages/articles/admin', {
         articlesData: result[0].rows,
         addedDataCheck: result[1].rows,
+        title: 'Admin',
       });
     })
     .catch(err => {
-      res.render('pages/error', { error: err });
+      res.render('pages/error', { error: err, title: 'results' });
     });
 });
 
@@ -92,7 +92,10 @@ router.get('/article/:id', (req, res) => {
     .query(SQL, [req.params.id])
     .then(result => {
       console.log(result.rows[0]);
-      res.render('pages/articles/article', { oneArticleData: result.rows[0] });
+      res.render('pages/articles/article', {
+        oneArticleData: result.rows[0],
+        title: 'Article',
+      });
     })
     .catch(err => {
       res.render('pages/error', { error: err });

@@ -63,7 +63,7 @@ server.get('/', (req, res) => {
 
 // For any route that is not specified
 server.get('*', (req, res) => {
-  res.render('pages/error');
+  res.render('pages/error', { title: 'Error' });
 });
 
 //Connect to dataBase then listen to the PORT
