@@ -1,0 +1,637 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&family=Open+Sans+Condensed:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Antonio&family=Open+Sans+Condensed:wght@300&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  /* bodyd */
+  .homepage__body {
+  }
+  /* header */
+  .shared__header {
+    position: relative;
+    background-color: rgb(37, 37, 38);
+    color: rgb(190, 175, 135);
+    padding: 0px 20px;
+    /* overflow: hidden; */
+    font-family: "Open Sans Condensed", sans-serif;
+
+    /* display: flex; */
+
+    /* display: flex; */
+  }
+
+  .shared__header .headerdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 16vh;
+
+    /* line-height: 40px; */
+  }
+  .shared__header .headerdiv nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .shared__header .headerdiv h2 {
+    font-size: 30px;
+    letter-spacing: 3px;
+    /* margin-right: 100px; */
+    font-family: "Antonio", sans-serif;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+  }
+
+  .shared__header .headerdiv ul {
+    display: flex;
+    list-style: none;
+    color: white;
+    font-weight: 300;
+    margin-left: 20px;
+    font-family: "Open Sans Condensed", sans-serif;
+  }
+
+  .shared__header ul li {
+    margin-right: 25px;
+    letter-spacing: 3px;
+    cursor: pointer;
+  }
+
+  .shared__header ul li:hover {
+    color: rgb(190, 175, 135);
+  }
+
+  #updateBtn {
+    color: rgb(190, 175, 135);
+  }
+
+  .shared__header .phone_number {
+    /* margin-left: 570px; */
+  }
+
+  /* dropdown */
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .dropdown-content {
+    position: absolute;
+    left: 0px;
+    top: 16vh;
+    background-color: white;
+    /* height: 200px; */
+    width: 100%;
+    /* margin-top: -30px; */
+    box-shadow: rgb(134, 134, 134) 1px 1px 4px;
+    color: rgb(0, 0, 0);
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .text-div {
+    /* margin-top: 30px; */
+    padding-top: 30px;
+    width: 20%;
+    padding-left: 20px;
+    letter-spacing: none;
+  }
+
+  .text-div ul {
+    list-style: none;
+    letter-spacing: 1px;
+  }
+
+  .text-div ul li h5 {
+    list-style: none;
+    color: rgb(190, 175, 135);
+    font-family: monospace;
+  }
+
+  .dropdown-content div img {
+    /* float: right; */
+    /* margin-left: 500px; */
+  }
+
+  .a-dropdown {
+    color: rgb(0, 0, 0);
+  }
+  /* main */
+  .homepage__main {
+    display: flex;
+    flex-direction: column;
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-image: url(./img/airport.jpg);
+  }
+  .homepage__section__1 {
+    display: flex;
+    flex-direction: column;
+    height: 84vh;
+  }
+  .detail-box {
+    background-color: rgb(0, 0, 0, 0.6);
+    margin-top: 30px;
+    font-size: 50px;
+    width: 40%;
+    margin-left: 50px;
+    padding: 20px;
+    color: white;
+  }
+
+  .detail-box-content-1 {
+    font-family: "Antonio", sans-serif;
+    font-weight: 500;
+    letter-spacing: 5px;
+    transform: rotate(-90deg);
+    font-size: 15px;
+    float: left;
+    margin-left: -35px;
+    margin-right: -30px;
+    color: rgb(255, 255, 255, 0.5);
+    margin-top: 40px;
+  }
+
+  .detail-box-content-2 {
+    font-family: "Antonio", sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-left: 50px;
+  }
+  .homepage__searchform {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 30px auto;
+  }
+  .homepage__searchbar {
+    /* margin-top: 120px; */
+    /* width: 900px; */
+    height: 50px;
+    border-collapse: collapse;
+    /* margin-left: 250px; */
+    outline: none;
+    border: none;
+    background-color: rgb(255, 255, 255, 0.7);
+    color: rgb(190, 175, 135);
+    font-size: 20px;
+    /* box-shadow: rgb(41, 41, 41) 1px 1px 3px; */
+    padding-left: 30px;
+  }
+
+  .homepage__search__btn {
+    /* float: right;
+    margin-right: 215px; */
+    /* margin-top: 10px; */
+    background-color: rgb(190, 175, 135);
+    outline: none;
+    border: none;
+    width: 150px;
+    height: 40px;
+    letter-spacing: 3px;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+  .homepage__search__btn:hover {
+    background-color: rgb(146, 133, 96);
+  }
+
+  .explor {
+    margin-top: -35px;
+    align-self: center;
+  }
+
+  .explor-button {
+    background-color: rgba(85, 85, 85, 0.5);
+    outline: none;
+    border: none;
+    width: 150px;
+    height: 40px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+
+  .explor-button:hover {
+    background-color: rgba(32, 32, 32, 0.5);
+  }
+
+  .articles__sections {
+    background-image: url(./img/airport-1.jpg);
+    height: 654px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .aticles-text {
+    font-family: "Antonio", sans-serif;
+    text-align: center;
+    font-size: 75px;
+    letter-spacing: 2px;
+    margin: 40px auto;
+    color: rgb(95, 95, 95);
+  }
+
+  .aticles-img {
+    /* float: right; */
+  }
+
+  .__footer {
+    background-color: rgb(37, 37, 38);
+    color: rgb(190, 175, 135);
+    font-family: "Antonio", sans-serif;
+  }
+
+  .shared__footer {
+    background-color: rgb(37, 37, 38);
+    color: rgb(190, 175, 135);
+    font-family: "Antonio", sans-serif;
+    letter-spacing: 1px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .socical-media {
+    background-color: rgb(132, 114, 82);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    border-radius: 5px;
+    box-shadow: rgb(0, 0, 0) 2px 2px 2px;
+  }
+
+  .socical-media img {
+    margin: 3px 3px 3px 3px;
+  }
+
+  .footer-text {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+  }
+
+  .footer-text ul {
+    list-style-type: none;
+    font-size: 25px;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+  }
+
+  .footer-text ul li {
+    color: white;
+    font-family: "Open Sans Condensed", sans-serif;
+    letter-spacing: 0px;
+    font-size: 15px;
+    text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    padding-bottom: 2px;
+    padding-top: 3px;
+  }
+
+  .footer-logo {
+    font-size: 50px;
+    margin-right: 30px;
+    align-self: center;
+    letter-spacing: 3px;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+  }
+
+  .rights {
+    /* margin-top: 0px; */
+    color: rgb(182, 182, 182);
+    letter-spacing: 0px;
+    font-family: "Open Sans Condensed", sans-serif;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* bodyd */
+  .homepage__body {
+  }
+  /* header */
+  .shared__header {
+    position: relative;
+    background-color: rgb(37, 37, 38);
+    color: rgb(190, 175, 135);
+    padding: 0px 20px;
+    /* overflow: hidden; */
+    font-family: "Open Sans Condensed", sans-serif;
+
+    /* display: flex; */
+
+    /* display: flex; */
+  }
+
+  .shared__header .headerdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 16vh;
+
+    /* line-height: 40px; */
+  }
+  .shared__header .headerdiv nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .shared__header .headerdiv h2 {
+    font-size: 10px;
+    letter-spacing: 3px;
+    /* margin-right: 100px; */
+    font-family: "Antonio", sans-serif;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+  }
+
+  .shared__header .headerdiv ul {
+    display: flex;
+    list-style: none;
+    color: white;
+    font-weight: 300;
+    margin-left: 20px;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 10px;
+  }
+
+  .shared__header ul li {
+    margin-right: 25px;
+    letter-spacing: 3px;
+    cursor: pointer;
+  }
+
+  .shared__header ul li:hover {
+    color: rgb(190, 175, 135);
+  }
+
+  #updateBtn {
+    color: rgb(190, 175, 135);
+  }
+
+  .shared__header .phone_number {
+    /* margin-left: 570px; */
+    font-size: 5px;
+    display: none;
+  }
+
+  /* dropdown */
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .dropdown-content {
+    position: absolute;
+    left: 0px;
+    top: 16vh;
+    background-color: white;
+    /* height: 200px; */
+    width: 100%;
+    /* margin-top: -30px; */
+    box-shadow: rgb(134, 134, 134) 1px 1px 4px;
+    color: rgb(0, 0, 0);
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    font-size: 10px;
+  }
+
+  .text-div {
+    /* margin-top: 30px; */
+    padding-top: 30px;
+    width: 20%;
+    padding-left: 20px;
+    letter-spacing: none;
+  }
+
+  .text-div ul {
+    list-style: none;
+    letter-spacing: 1px;
+  }
+
+  .text-div ul li h5 {
+    list-style: none;
+    color: rgb(190, 175, 135);
+    font-family: monospace;
+  }
+
+  .dropdown-content div img {
+    /* float: right; */
+    /* margin-left: 500px; */
+  }
+
+  .a-dropdown {
+    color: rgb(0, 0, 0);
+  }
+  /* main */
+  .homepage__main {
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(./img/airport.jpg);
+  }
+  .homepage__section__1 {
+    display: flex;
+    flex-direction: column;
+    height: 84vh;
+  }
+  .detail-box {
+    background-color: rgb(0, 0, 0, 0.6);
+    margin-top: 30px;
+    font-size: 50px;
+    width: 100%;
+    /* margin-left: 50px; */
+    padding: 20px;
+    color: white;
+  }
+
+  .detail-box-content-1 {
+    font-family: "Antonio", sans-serif;
+    font-weight: 500;
+    letter-spacing: 5px;
+    transform: rotate(-90deg);
+    font-size: 5px;
+    float: left;
+    margin-left: -35px;
+    margin-right: -30px;
+    color: rgb(255, 255, 255, 0.5);
+    margin-top: 20px;
+  }
+
+  .detail-box-content-2 {
+    font-family: "Antonio", sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-left: 50px;
+    font-size: 30px;
+  }
+  .homepage__searchform {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 30px auto;
+  }
+  .homepage__searchbar {
+    /* margin-top: 120px; */
+    /* width: 900px; */
+    height: 50px;
+    border-collapse: collapse;
+    /* margin-left: 250px; */
+    outline: none;
+    border: none;
+    background-color: rgb(255, 255, 255, 0.7);
+    color: rgb(190, 175, 135);
+    font-size: 20px;
+    /* box-shadow: rgb(41, 41, 41) 1px 1px 3px; */
+    padding-left: 30px;
+  }
+
+  .homepage__search__btn {
+    /* float: right;
+    margin-right: 215px; */
+    /* margin-top: 10px; */
+    background-color: rgb(190, 175, 135);
+    outline: none;
+    border: none;
+    width: 150px;
+    height: 40px;
+    letter-spacing: 3px;
+    align-self: center;
+    cursor: pointer;
+  }
+
+  .homepage__search__btn:hover {
+    background-color: rgb(146, 133, 96);
+  }
+
+  .explor {
+    margin-top: -35px;
+    align-self: center;
+  }
+
+  .explor-button {
+    background-color: rgba(85, 85, 85, 0.5);
+    outline: none;
+    border: none;
+    width: 150px;
+    height: 40px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+
+  .explor-button:hover {
+    background-color: rgba(32, 32, 32, 0.5);
+  }
+
+  .articles__sections {
+    background-image: url(./img/airport-1.jpg);
+    height: 654px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
+
+  .aticles-text {
+    font-family: "Antonio", sans-serif;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin: 40px auto;
+    color: rgb(95, 95, 95);
+  }
+
+  .aticles-img {
+    /* float: right; */
+    /* width: 258px;
+    height: 654px; */
+    display: none;
+  }
+
+  .__footer {
+    background-color: rgb(37, 37, 38);
+    color: rgb(190, 175, 135);
+    font-family: "Antonio", sans-serif;
+  }
+
+  .shared__footer {
+    background-color: rgb(37, 37, 38);
+    color: rgb(190, 175, 135);
+    font-family: "Antonio", sans-serif;
+    letter-spacing: 1px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .socical-media {
+    background-color: rgb(132, 114, 82);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+    border-radius: 5px;
+    box-shadow: rgb(0, 0, 0) 2px 2px 2px;
+  }
+
+  .socical-media img {
+    margin: 3px 3px 3px 3px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .footer-text {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+  }
+
+  .footer-text ul {
+    list-style-type: none;
+    font-size: 10px;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+  }
+
+  .footer-text ul li {
+    color: white;
+    font-family: "Open Sans Condensed", sans-serif;
+    letter-spacing: 0px;
+    font-size: 5px;
+    text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    padding-bottom: 2px;
+    padding-top: 3px;
+  }
+
+  .footer-logo {
+    font-size: 20px;
+    margin-right: 30px;
+    align-self: center;
+    letter-spacing: 3px;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+    /* transform: rotate(90deg); */
+  }
+
+  .rights {
+    /* margin-top: 0px; */
+    color: rgb(182, 182, 182);
+    letter-spacing: 0px;
+    font-family: "Open Sans Condensed", sans-serif;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 3px;
+  }
+}
