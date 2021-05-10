@@ -15,6 +15,7 @@ const client = new pg.Client({
   // ssl: { rejectUnauthorized: false },
 });
 module.exports = client;
+// module.exports = server;
 server.use(express.urlencoded({ extended: true }));
 server.set('view engine', 'ejs');
 server.use(express.static('./public'));

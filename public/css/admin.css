@@ -1,0 +1,43 @@
+.__admin_div section {
+  background-color: rgba(49, 42, 48, 0.392);
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.__admin_div {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.__admin_div section img {
+  width: 60%;
+}
+
+.__admin_div button {
+  background-color: rebeccapurple;
+}
+
+.__admin_div .__admin_update {
+  display: none;
+}
+
+.__admin_update_btn_form {
+  display: none;
+}
+
+.__admin_div .__admin_update * {
+  width: 99%;
+  min-height: 25px;
+  margin-bottom: 5px;
+}
+
+.__admin_div .added_paragraph_for_admin {
+  background-color: rgba(0, 128, 0, 0.664);
+  font-size: 20px;
+  text-align: center;
+  word-spacing: 15px;
+}

@@ -1,34 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../../layouts/head') %>
-<!-- 
-<style>
-  .articles_contanier {
-  width: 80%;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
-  margin-left: 10%;
-}
 
-.articles_result {
-  grid-column: span 1;
-  grid-row: span 1;
-  background-color: #fad586;
-  margin: 5%;
-  padding: 2%;
-}
-img{
-  width: 70%;
-  margin-left: 15%;
-}
-.articles_result p {
-  position:relative;
-  height: 20%;
-  border: black solid 1px;
-}
-
-</style> -->
   <body>
     <%- include('../../layouts/header') %>
       <!-- Your code here -->
@@ -41,7 +14,7 @@ img{
               <%=item.title%>
             </h2>
             <h4>
-              <%=item.author %>
+              Article by: <%=item.author %>
 
             </h4>
             <h5>
@@ -52,7 +25,7 @@ img{
               <%=item.description %>
             </p>
             <form action="/articles/article/<%=item.id%>">
-              <button type="submit">Read more →</button>
+              <button type="submit" id="articles_btn">Read more →</button>
             </form>
           </section>
           <%})%>

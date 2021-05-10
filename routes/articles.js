@@ -1,13 +1,12 @@
 'use strict';
 
 const express = require('express');
-// const pg = require('pg');
-// const client = new pg.Client({
-//   connectionString: process.env.DATABASE_URL,
-//   // ssl: { rejectUnauthorized: false },
-// });
 const router = express.Router();
 const client = require('../server.js');
+// const server = require('../server.js');
+
+// server.use(express.static('../public'));
+
 // Put your routes here
 
 // /articles

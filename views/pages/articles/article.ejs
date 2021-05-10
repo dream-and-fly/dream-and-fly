@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../../layouts/head') %>
+<style>
+.articleOne{
+  /* background-color: red; */
+  width: 80%;
+  margin-left: 10%;
+}
+.articleOne img{
+  width: 100%;
+  /* margin-left: 15%; */
+  border-radius: 20px;
+}
+.articleOne h2{
+  color: black;
+  font-size: 26px;
+  font-weight: bold;
+  width: 70%;
+  margin-top: 25px;
+  /* margin-left: 5%; */
+}
 
+.articleOne h4{
+  margin-top: 10px;
+    font-size: 18px;
+    color: #4a4a4a;
+    
+}.articleOne h5{
+  margin-top: 10px;
+    font-size: 18px;
+    color: #4a4a4a;
+}
+.articleOne p {
+      margin-top: 20px;
+     color: #ab9964;
+     font-size: 20px;
+  }
+
+
+</style>
   <body>
     <%- include('../../layouts/header') %>
       <!-- Your code here -->
+      <div class="articleOne">
+      
       <img src="<%=oneArticleData.image %>">
       <h2>
         <%=oneArticleData.title%>
 
       </h2>
       <h4>
-        <%=oneArticleData.author %>
+        Article by: <%=oneArticleData.author %>
 
       </h4>
       <h5>
@@ -22,6 +61,7 @@
       </p>
       <%- include('../../layouts/footer') %>
         <%- include('../../layouts/scripts') %>
+      </div>
   </body>
 
 </html>
