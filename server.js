@@ -14,6 +14,7 @@ const client = new pg.Client({
   connectionString: process.env.DATABASE_URL,
   // ssl: { rejectUnauthorized: false },
 });
+module.exports = client;
 server.use(express.urlencoded({ extended: true }));
 server.set('view engine', 'ejs');
 server.use(express.static('./public'));
@@ -25,75 +26,18 @@ server.use(methodOverride('_method'));
 const articlesRoute = require('./routes/articles.js');
 server.use('/articles', articlesRoute);
 
-server.get('/articles/admin', (req, res) => {
-  let SQL = `SELECT * FROM articles`;
-  client
-    .query(SQL)
-    .then(result => {
-      // console.log(result.rows);
-      res.render('pages/articles/admin', { articlesData: result.rows });
-    })
-    .catch(err => {
-      res.render('pages/error', { error: err });
-    });
-});
-
-server.post('/articles/admin', (req, res) => {
-  let { image, date, title, author, description } = req.body;
-  console.log(req.body);
-  let SQL = `INSERT INTO articlesforcustmor (image, date, title, author, description) VALUES ($1,$2,$3,$4,$5) RETURNING *;`;
-
-  let safeValues = [image, date, title, author, description];
-
-  client
-    .query(SQL, safeValues)
-    .then(res.redirect('/articles/admin'))
-    .catch(err => {
-      res.render('pages/error', { error: err });
-    });
-});
-server.put('/articles/admin', (req, res) => {
-  let { image, date, title, author, description, id } = req.body;
-  // console.log(id);
-  let SQL = `UPDATE articles SET image=$1, date=$2, title=$3, author=$4, description=$5 WHERE id=$6;`;
-  let safeValues = [image, date, title, author, description, id];
-  // console.log(safeValues);
-  client
-    .query(SQL, safeValues)
-    .then(r => {
-      // console.log(r);
-      res.redirect('/articles/admin');
-    })
-    .catch(err => {
-      res.render('pages/error', { error: err });
-    });
-});
-
-server.delete('/articles/admin', (req, res) => {
-  let { id } = req.body;
-  console.log(id);
-  let SQL = `DELETE FROM articlesforcustmor WHERE id=$1;`;
-
-  client
-    .query(SQL, [id])
-    .then(res.redirect('/articles/articles'))
-    .catch(err => {
-      res.render('pages/error', { error: err });
-    });
-});
-
-server.get('/articles/articles', (req, res) => {
-  let SQL = `SELECT * FROM articlesforcustmor`;
-  client
-    .query(SQL)
-    .then(result => {
-      // console.log(result.rows);
-      res.render('pages/articles/articles', { articlesData: result.rows });
-    })
-    .catch(err => {
-      res.render('pages/error', { error: err });
-    });
-});
+// server.get('/articles/admin', (req, res) => {
+//   let SQL = `SELECT * FROM articles`;
+//   client
+//     .query(SQL)
+//     .then(result => {
+//       // console.log(result.rows);
+//       res.render('pages/articles/admin', { articlesData: result.rows });
+//     })
+//     .catch(err => {
+//       res.render('pages/error', { error: err });
+//     });
+// });
 
 // results route ------- most IMPORTANT route ---- APIs here
 server.get('/results/:search_query', (req, res) => {

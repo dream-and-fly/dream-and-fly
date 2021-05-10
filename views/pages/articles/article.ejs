@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../../layouts/head') %>
+<%- include('../../layouts/head') %>
+
   <body>
     <%- include('../../layouts/header') %>
-    <!-- Your code here -->
-
-    <%- include('../../layouts/footer') %> <%- include('../../layouts/scripts')
-    %>
+      <!-- Your code here -->
+      <img src="<%=oneArticleData.image %>">
+      <h2>
+        <%=oneArticleData.date %>
+      </h2>
+      <h4>
+        <%=oneArticleData.title%>
+      </h4>
+      <p>
+        <%=oneArticleData.author %>
+      </p>
+      <h3>
+        <%=oneArticleData.description %>
+      </h3>
+      <%- include('../../layouts/footer') %>
+        <%- include('../../layouts/scripts') %>
   </body>
+
 </html>
