@@ -2,9 +2,48 @@
 <html lang="en">
   <%- include('../layouts/head') %>
   <body>
-    <%- include('../layouts/header') %>
-    <!-- Your code here -->
+    <div class="homepage__body">
+      <%- include('../layouts/header') %>
+      <!-- Your code here -->
+      <main class="homepage__main">
+        <section class="homepage__section__1">
+          <section class="detail-box">
+            <p class="detail-box-content-1">
+              UNLIMITED <br />
+              HORIZONS
+            </p>
+            <p class="detail-box-content-2">
+              DON`T AFRAID <br />
+              FOR DREAMING
+            </p>
+          </section>
 
-    <%- include('../layouts/footer') %> <%- include('../layouts/scripts') %>
+          <section>
+            <form action="" class="homepage__searchform">
+              <input
+                type="text"
+                placeholder="Search cites & travel"
+                class="homepage__searchbar"
+              />
+              <br />
+              <button class="homepage__search__btn">Search</button>
+            </form>
+          </section>
+        </section>
+        <section class="explor">
+          <a href="#articles-explor"
+            ><button class="explor-button">EXPLORE</button></a
+          >
+        </section>
+        <section class="articles__sections" id="articles-explor">
+          <div class="aticles-text">Articles</div>
+          <div class="aticles-img">
+            <img src="img/homepage/plane.jpg" alt="" class="aticles-img" />
+          </div>
+        </section>
+      </main>
+      <%- include('../layouts/footer') %>
+    </div>
+    <%- include('../layouts/scripts') %>
   </body>
 </html>
