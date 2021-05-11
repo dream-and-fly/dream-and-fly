@@ -14,30 +14,19 @@ const client = new pg.Client({
   connectionString: process.env.DATABASE_URL,
   // ssl: { rejectUnauthorized: false },
 });
-module.exports = client;
+
 server.use(express.urlencoded({ extended: true }));
 server.set('view engine', 'ejs');
 server.use(express.static('./public'));
 server.use(methodOverride('_method'));
+module.exports = client;
+// module.exports = server;
 
 // Start you routes here
 
 // Articles route
 const articlesRoute = require('./routes/articles.js');
 server.use('/articles', articlesRoute);
-
-// server.get('/articles/admin', (req, res) => {
-//   let SQL = `SELECT * FROM articles`;
-//   client
-//     .query(SQL)
-//     .then(result => {
-//       // console.log(result.rows);
-//       res.render('pages/articles/admin', { articlesData: result.rows });
-//     })
-//     .catch(err => {
-//       res.render('pages/error', { error: err });
-//     });
-// });
 
 // results route ------- most IMPORTANT route ---- APIs here
 server.get('/results/:search_query', (req, res) => {

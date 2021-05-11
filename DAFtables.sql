@@ -10,12 +10,12 @@ CREATE TABLE articles (
 
 DROP TABLE IF EXISTS articlesforcustmor;
 CREATE TABLE articlesforcustmor (
-  id integer PRIMARY KEY,
-  date VARCHAR(255),
-  title VARCHAR(255),
-  author VARCHAR(255),
-  image VARCHAR(255),
-  description TEXT
+  id integer PRIMARY KEY
+  -- date VARCHAR(255),
+  -- title VARCHAR(255),
+  -- author VARCHAR(255),
+  -- image VARCHAR(255),
+  -- description TEXT
 );
 
 

@@ -1,0 +1,262 @@
+\q
+\l
+\c
+\du
+\c amarah
+\c databasecheck a
+\c databasecheck 
+\d
+\c amarah
+\d
+\q
+create API_DATABASE
+\l
+create database API_DATABASE
+\l
+\c
+\l
+\q
+\d
+\du
+CREATE database API_DATABASE
+create database API_DATABASE;
+ CREATE database API_DATABASE;
+\l
+\c  api_database
+\l
+\du
+\q
+\l
+psql api_database
+\l
+\c api_database
+create table location
+\l
+create table location;
+\d
+\q
+\l
+\c api_database 
+\q
+\d
+\q
+psql (13.2)
+pgstop
+\q
+\l
+\c api_database 
+\q
+\c api_database
+\d
+\q
+\c api_database 
+\d
+D location
+\d
+ DROP location;
+\d
+DELETE location;
+DELETE location;
+SELECT * FROM location
+DELETE location;;
+SELECT * FROM location
+DELETE location;
+\d
+SELECT * FROM location;
+SELECT TOP 1 * FROM location;
+SELECT * FROM location
+LIMIT 1
+;
+SELECT * FROM location
+FETCH FIRST 1 ROWS ONLY;
+\c api_database 
+select * from location
+\d
+select * from location;
+SELECT * from location;
+\d
+delete  location;
+DELETE location;
+\q
+\l
+\c api_database
+\d
+select * locations
+;
+SELECT * FROM locations;
+\q
+\l
+\c api_database 
+select * from locations;
+\q
+\l
+\c api_database 
+selecr * from locations;
+select * from locations;
+\q
+\c api_database 
+select * from locations;
+select * from locations where not EXISTS ( search_query=amman);
+select * from locations where not EXISTS (select  search_query from locations where search_query=amman);
+select * from locations where not EXISTS (select  search_query from locations where search_query='amman');
+select * from locations;
+select * from locations where not EXISTS (select search_query from locations where search_query='amman');
+select * from locations where not EXISTS (search_query='amman');
+select * from locations where not EXISTS (select search_query from locations where search_query='amman');
+select * from locations where not EXISTS (select * from locations where search_query='amman');
+delete from locations;
+\d 
+\d locations
+\q
+delete from locations;
+\q
+\d locations
+select * from locations;
+select * from locations;
+\q
+\l
+cd
+\q
+\c book_db 
+\d
+\l
+\q
+\c book_db 
+\d
+\d books
+\q
+\c book_db 
+\d books
+\q
+\c book_db 
+\d books
+\d
+\q
+\c book_db 
+\d books
+\q
+\c book_db 
+\d books
+\q
+\c book_db 
+\d books
+SELECT * from books;
+\q 
+\l
+\c book_db 
+\d
+\d books
+select * from books;
+\q
+DELETE * book_DB ;
+DELETE book_DB ;
+DELETE book_DB 
+;
+DELETE DATABASE book_DB 
+;
+DROP DATABASE book_DB 
+;
+\l
+CREATE books_database
+;
+CREATE DATABASE books_database
+;
+psql -b books_database -f seed.sql;
+psql -b books_database -f seed.sql
+\q
+\c books_database 
+SELECT * FROM books;
+\q
+\c books_database 
+select * from books;
+\q
+\c books_database 
+select * from books;
+select * from books where id=2;
+\q 
+\c books_database 
+select * from books where id=0;
+\q
+\c books_database 
+\d books
+select * from books;
+DROP books;
+DROP * books;
+\q
+\c books_database 
+select * from books;
+\q
+\q
+\c books_database 
+select * from books;
+DROP books;
+DROP * books;
+DROP * from books;
+drop books
+;
+\q
+\c books_database 
+\d books
+select * from books;
+\q
+\c books_database 
+select * from books;
+\q
+\c books_database 
+select * from books;
+\q
+\d
+select * from public;
+\q
+\d
+\l
+\d
+\d
+\q
+\d
+\q
+\l
+\q
+CREATE DATABASE DAF
+;
+\c daf
+\q
+\l
+\q
+\c daf 
+select * from DAFtables.sql
+;
+\s
+\c
+\l
+\d
+create table DAFtables;
+create table DAFtables
+;
+\d
+create table s;
+\d
+CREATE table DAFtables;
+\q
+\l
+\c daf
+\d
+\s
+\q
+\c daf 
+select * from DAFtables;
+\d
+select * from articles;
+\q
+\c daf 
+select * from articles;
+\q
+\l
+\c daf
+select * from articles left join articlesforcustmor on articles.id=articlesforcustmor.id
+;
+\q
+\c daf 
+select * from articlesforcustmor;
+\q
+\s daf
