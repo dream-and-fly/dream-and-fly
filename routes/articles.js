@@ -79,7 +79,7 @@ router.delete('/admin', (req, res) => {
 });
 
 router.get('/article/:id', (req, res) => {
-  let SQL = `SELECT * FROM articlesforcustmor WHERE id=$1;`;
+  let SQL = `select * from articles inner join articlesforcustmor on articles.id=articlesforcustmor.id WHERE articlesforcustmor.id=$1;`;
   client
     .query(SQL, [req.params.id])
     .then(result => {
