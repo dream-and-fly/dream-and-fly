@@ -28,6 +28,8 @@
 
 ## DB ERD
 
+![DB ERD](img/general/erd.png)
+
 ## User Stories
 
 1- as a user, I would like to have a shared head, header and footer, between all website pages, so the website gives the feeling of professionality
