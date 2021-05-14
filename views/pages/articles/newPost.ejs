@@ -35,6 +35,11 @@
 
     }
 
+    .right-section__forAddingNewPost>h2 {
+      font-size: x-large;
+
+    }
+
     .right-section__forAddingNewPost * {
       margin-bottom: 5px;
     }
@@ -83,6 +88,7 @@
           </form>
         </section>
         <section class="right-section__forAddingNewPost">
+          <h2>Last articles was added</h2>
           <% newArticlesAddes.forEach((item,index)=>{ %>
             <section class="inner-rightSection inner-rightSection<%=index%>">
               <img src="<%=item.image %>">
