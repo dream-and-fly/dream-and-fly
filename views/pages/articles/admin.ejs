@@ -39,12 +39,12 @@
               </form>
             </section>
 
-            <!-- <section class="__admin_delete">
+            <section class="__admin_delete">
               <form action="/articles/admin?_method=delete" method="POST">
-                <input type="hidden" name="id" value="<%=item.id%>">
+                <input type="hidden" name="Delete_root_articles_id" value="<%=item.id%>">
                 <button>DELETE</button>
               </form>
-            </section> -->
+            </section>
 
             <section>
               <button onclick="myFunction()" id="<%=item.id%>">UPDATE</button>
@@ -116,6 +116,10 @@
           </section>
           <%})%>
 
+
+            <form action="/articles/new-post">
+              <button>Add new post</button>
+            </form>
 
       </div>
 
