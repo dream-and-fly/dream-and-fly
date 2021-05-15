@@ -1,11 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../../layouts/head') %>
-  <body>
-    <%- include('../../layouts/header') %>
-    <!-- Your code here -->
+<%- include('../../layouts/head') %>
 
-    <%- include('../../layouts/footer') %> <%- include('../../layouts/scripts')
-    %>
+  <body>
+
+
+    <%- include('../../layouts/header') %>
+ 
+      <!-- Your code here -->
+
+      <div class="__admin_contanier">
+        <div class="__admin_div">
+  
+          <% articlesData.forEach((item,index)=>{ %>
+            <section>
+              <img src="<%=item.image %>">
+              <h2>
+                <%=item.date %>
+              </h2>
+              <h4>
+                <%=item.title%>
+              </h4>
+              <p>
+                <%=item.author %>
+              </p>
+              <!-- <h3>
+                  <%=item.description %>
+                </h3> -->
+              <section class="__admin_add">
+                <form action="/articles/admin" method="POST">
+                  <input type="hidden" name="image" value="<%=item.image%>">
+                  <input type="hidden" name="title" value="<%=item.title%>">
+                  <input type="hidden" name="author" value="<%=item.author%>">
+                  <input type="hidden" name="description" value="<%=item.description%>">
+                  <input type="hidden" name="date" value="<%=item.date%>">
+                  <input type="hidden" name="id" value="<%=item.id%>">
+                  <button>Add</button>
+                </form>
+              </section>
+              <section class="__admin_delete">
+                <form action="/articles/admin?_method=delete" method="POST">
+                  <input type="hidden" name="Delete_root_articles_id" value="<%=item.id%>">
+                  <button>DELETE</button>
+                </form>
+              </section>
+              <section>
+                <button onclick="myFunction()" id="<%=item.id%>">UPDATE</button>
+                <section>
+                  <form class="__admin_update __admin_update<%=item.id%>" action="/articles/admin?_method=put"
+                    method="POST">
+                    <input type="text" name="title" value=" <%= item.title  %> " placeholder="title" />
+                    <input type="text" name="author" value="<%= item.author  %>" placeholder="author" />
+                    <input type="text" name="date" value="<%= item.date  %>" placeholder="date" />
+                    <input type="text" name="image" value="<%= item.image  %>" placeholder="image" />
+                    <textarea name="description" cols="30" rows="10" placeholder="description">
+                  <%= item.description  %></textarea>
+                    <input type="hidden" name="id" value="<%=item.id%>">
+                </section>
+                <button class="__admin_update_btn_form  __admin_update_btn_form<%=item.id%>">UPDATE</button>
+                </form>
+              </section>
+              <%addedDataCheck.forEach(item2=>{%>
+                <%if(item.id===item2.id){ %>
+                  <p class="added_paragraph_for_admin">THIS ARTICLE WAS ADDED</p>
+                  <%}%>
+                    <%})%>
+            </section>
+            <% }) %>
+        </div>
+  
+        <div class="__admin_sidebar_section">
+          <br>
+          <h1>Articles Area for Custmor</h1><br>
+          <form action="/articles/admin?_method=delete" method="POST">
+            <input type="hidden" name="deleteN" value="All">
+            <button>DELETE ALL</button>
+          </form>
+          <%addedDataCheck.forEach(item=>{%>
+            <section class="__box_inside_sidebar">
+              <img src="<%=item.image %>">
+              <h2>
+                <%=item.date %>
+              </h2>
+              <h4>
+                <%=item.title%>
+              </h4>
+              <p>
+                <%=item.author %>
+              </p>
+              <form action="/articles/admin?_method=delete" method="POST">
+                <input type="hidden" name="deleteN" value="<%=item.id%>">
+                <button>DELETE</button>
+              </form>
+              <section>
+                <button style="background-color: aqua;" onclick="SideBarmyFunction()" id="S<%=item.id%>">UPDATE</button>
+                <section>
+                  <form class="__admin_update __admin_update_SideBarS<%=item.id%>" action="/articles/admin?_method=put"
+                    method="POST">
+                    <input type="text" name="title" value=" <%= item.title  %> " placeholder="title" />
+                    <input type="text" name="author" value="<%= item.author  %>" placeholder="author" />
+                    <input type="text" name="date" value="<%= item.date  %>" placeholder="date" />
+                    <input type="text" name="image" value="<%= item.image  %>" placeholder="image" />
+                    <textarea name="description" cols="30" rows="10" placeholder="description">
+                  <%= item.description  %></textarea>
+                    <input type="hidden" name="id" value="<%=item.id%>">
+                </section>
+                <button class="__admin_update_btn_form  __admin_update_btn_S<%=item.id%>">UPDATE</button>
+                </form>
+              </section>
+            </section>
+            <%})%>
+  
+  
+              <form action="/articles/new-post">
+                <button>Add new post</button>
+              </form>
+  
+              <form action="/articles">
+                <button>Show as a Custmor</button>
+              </form>
+        </div>
+      </div>
+
+
+      <script>
+        function myFunction() {
+          console.log(event.target.id);
+          $(`.__admin_update${event.target.id}`).show();
+          $(`#${event.target.id}`).hide();
+          $(`.__admin_update_btn_form${event.target.id}`).show();
+        }
+        function SideBarmyFunction() {
+          console.log(event.target.id);
+          $(`.__admin_update_SideBar${event.target.id}`).show();
+          $(`#${event.target.id}`).hide();
+          $(`.__admin_update_btn_${event.target.id}`).show();
+        }
+      </script>
+      <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+      <%- include('../../layouts/footer') %>
+        <%- include('../../layouts/scripts') %>
   </body>
+
 </html>

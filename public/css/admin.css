@@ -1,0 +1,70 @@
+.__admin_contanier {
+  display: grid;
+  grid-template-columns: 60% 20%;
+  grid-template-areas: "s d";
+  gap: 10%;
+  justify-content: flex-end;
+}
+.__admin_sidebar_section {
+  background-color: crimson;
+  grid-area: d;
+  text-align: center;
+}
+.__box_inside_sidebar {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid blanchedalmond;
+  margin: 20px auto;
+  background-color: rgb(211, 192, 165);
+}
+.__box_inside_sidebar img {
+  width: 50%;
+  height: 80px;
+  margin: 5px auto;
+}
+.__admin_div {
+  grid-area: s;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: cornsilk;
+}
+
+.__admin_div section {
+  background-color: rgba(204, 64, 185, 0.392);
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.__admin_div section img {
+  width: 60%;
+}
+
+.__admin_div button {
+  background-color: rebeccapurple;
+}
+
+.__admin_update {
+  display: none;
+}
+
+.__admin_update_btn_form {
+  display: none;
+}
+
+.__admin_div .__admin_update * {
+  width: 99%;
+  min-height: 25px;
+  margin-bottom: 5px;
+}
+
+.__admin_div .added_paragraph_for_admin {
+  background-color: rgba(0, 128, 0, 0.664);
+  font-size: 20px;
+  text-align: center;
+  word-spacing: 15px;
+}
