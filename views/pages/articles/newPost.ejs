@@ -129,9 +129,13 @@
               <section class="__admin_add_NewPost">
                 <form action="/articles/admin/new-post" method="POST">
                   <input type="hidden" name="add" value="<%=item.id%>">
-                  <button>Add</button>
+                  <button>Add to Custmor Page</button>
                 </form>
               </section>
+              <form action="/articles/admin/new-post?_method=delete" method="POST">
+                <input type="hidden" name="deletefromCustmorpage" value="<%=item.id%>">
+                <button>DELETE From Custmor Page</button>
+              </form>
               <%addedDataCheck.forEach(item2=>{%>
                 <%if(item.id===item2.id){ %>
                   <p class="added_paragraph_for_admin">THIS ARTICLE WAS ADDED</p>

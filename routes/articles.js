@@ -70,8 +70,7 @@ router.put('/admin', (req, res) => {
 router.delete('/admin', (req, res) => {
   let { deleteN } = req.body;
   let { Delete_root_articles_id } = req.body;
-  console.log(deleteN);
-  console.log(Delete_root_articles_id);
+
   let SQL = deleteN
     ? deleteN === 'All'
       ? client.query(`DELETE FROM articlesforcustmor ;`)
@@ -156,14 +155,29 @@ router.put('/admin/new-post', (req, res) => {
 });
 
 router.delete('/admin/new-post', (req, res) => {
-  let SQL = `DELETE FROM articles WHERE id =$1;`;
-  let safeValues = [req.body.deleteN];
-  client
-    .query(SQL, safeValues)
-    .then(res.redirect('/articles/admin/new-post'))
-    .catch(err => {
-      res.render('pages/error', { error: err, title: 'Error' });
-    });
+  // let SQL = `DELETE FROM articles WHERE id =$1;`;
+  // let safeValues = [req.body.deleteN];
+  // client
+  //   .query(SQL, safeValues)
+  //   .then(res.redirect('/articles/admin/new-post'))
+  //   .catch(err => {
+  //     res.render('pages/error', { error: err, title: 'Error' });
+  //   });
+
+  let { deleteN } = req.body;
+  let { deletefromCustmorpage } = req.body;
+
+  let SQL = deleteN
+    ? client.query(`DELETE FROM articles WHERE id =$1;`, [deleteN])
+    : client.query(`DELETE FROM articlesforcustmor WHERE id=$1;`, [
+        deletefromCustmorpage,
+      ]);
+
+  SQL.then(() => {
+    res.redirect('/articles/admin/new-post');
+  }).catch(err => {
+    res.render('pages/error', { error: err, title: 'Error' });
+  });
 });
 
 module.exports = router;
