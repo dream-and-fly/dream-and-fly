@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../../layouts/head') %>
+  <%- include('../layouts/head') %>
   <body>
-    <%- include('../../layouts/header') %>
+    <% var today = new Date(); %> <% var date
+    =today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(); ////// %>
+    <% console.log(date) //////////////////// %> <%-
+    include('../layouts/header') %>
     <!-- Your code here -->
 
+    <div class="__admin_div">
+      <% articlesDataforCustomer.forEach((item,index)=>{ %>
+      <section>
+        <img src="<%=item.image %>" />
+        <h2><%=item.date %></h2>
+        <h4><%=item.title%></h4>
+        <p><%=item.author %></p>
+        <h3><%=item.description %></h3>
+        <form action="/articles/article/<%=item.id%>">
+          <button type="submit">Read more →</button>
+        </form>
+      </section>
+      <%})%>
+    </div>
+    <!--  end   -->
     <%- include('../../layouts/footer') %> <%- include('../../layouts/scripts')
     %>
   </body>

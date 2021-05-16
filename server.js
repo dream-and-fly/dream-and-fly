@@ -20,6 +20,7 @@ server.set("view engine", "ejs");
 server.use(express.static("./public"));
 server.use(methodOverride("_method"));
 server.use(cors());
+module.exports = client;
 
 // Start you routes here
 
