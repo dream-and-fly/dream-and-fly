@@ -5,12 +5,27 @@
   <body>
     <%- include('../../layouts/header') %>
     <!-- Your code here -->
+    <main>
+    <div class="articleOne">
     <img src="<%=oneArticleData.image %>" />
-    <h2><%=oneArticleData.date %></h2>
-    <h4><%=oneArticleData.title%></h4>
-    <p><%=oneArticleData.author %></p>
-    <h3><%=oneArticleData.description %></h3>
-    <%- include('../../layouts/footer') %> <%- include('../../layouts/scripts')
-    %>
+    <h2>
+      <%=oneArticleData.title%>
+
+    </h2>
+    <h4>
+      Article by: <%=oneArticleData.author %>
+
+    </h4>
+    <h5>
+      <%=oneArticleData.date %>
+    </h5>
+    <p>
+      <%=oneArticleData.description %>
+    </p>
+    </div>
+  </main>
+  <%- include('../../layouts/footer') %> <%- include('../../layouts/scripts')
+  %>
+  
   </body>
 </html>

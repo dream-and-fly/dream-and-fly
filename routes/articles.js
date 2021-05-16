@@ -76,8 +76,8 @@ router.delete('/admin', (req, res) => {
       ? client.query(`DELETE FROM articlesforcustmor ;`)
       : client.query(`DELETE FROM articlesforcustmor WHERE id=$1;`, [deleteN])
     : client.query(`DELETE FROM articles WHERE id=$1;`, [
-        Delete_root_articles_id,
-      ]);
+      Delete_root_articles_id,
+    ]);
 
   SQL.then(() => {
     // console.log(SQL);
@@ -132,9 +132,9 @@ router.post('/admin/new-post', (req, res) => {
   let SQL = add
     ? client.query(`INSERT INTO articlesforcustmor (id) VALUES ($1);`, [add])
     : client.query(
-        `INSERT INTO articles (date ,image, title, author, description) VALUES ($1,$2,$3,$4,$5) RETURNING *; `,
-        safeValues
-      );
+      `INSERT INTO articles (date ,image, title, author, description) VALUES ($1,$2,$3,$4,$5) RETURNING *; `,
+      safeValues
+    );
 
   SQL.then(result => {
     res.redirect('/articles/admin/new-post');
@@ -163,8 +163,8 @@ router.delete('/admin/new-post', (req, res) => {
   let SQL = deleteN
     ? client.query(`DELETE FROM articles WHERE id =$1;`, [deleteN])
     : client.query(`DELETE FROM articlesforcustmor WHERE id=$1;`, [
-        deletefromCustmorpage,
-      ]);
+      deletefromCustmorpage,
+    ]);
 
   SQL.then(() => {
     res.redirect('/articles/admin/new-post');

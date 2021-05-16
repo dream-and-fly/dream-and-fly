@@ -11,7 +11,7 @@ CREATE TABLE articles (
 DROP TABLE IF EXISTS articlesforcustmor;
 CREATE TABLE articlesforcustmor (
   id integer PRIMARY KEY
-)
+);
 
 DROP TABLE IF EXISTS reviews;
 CREATE TABLE reviews (

@@ -15,9 +15,24 @@ const client = new pg.Client({
   connectionString: process.env.DATABASE_URL,
   // ssl: { rejectUnauthorized: false },
 });
+
+// let client;
+// let DATABASE_URL = process.env.DATABASE_URL;
+// let ENV =  process.env.ENV||'';
+// if (ENV === 'DEV') {
+//   client = new pg.Client({
+//     connectionString: DATABASE_URL
+//   });
+// } else {
+//   client = new pg.Client({
+//     connectionString: DATABASE_URL,
+//     ssl: {}
+//   });
+// }
 server.use(express.urlencoded({ extended: true }));
 server.set('view engine', 'ejs');
 server.use(express.static('./public'));
+server.use(express.static('./img'));
 server.use(methodOverride('_method'));
 server.use(cors());
 module.exports = client;
