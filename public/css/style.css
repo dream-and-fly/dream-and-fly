@@ -2,12 +2,13 @@
 @import "reset.css";
 @import "error.css";
 @import "about-us.css";
-@import "admin.css";
 @import "article.css";
 @import "articles.css";
+@import "admin.css";
 @import "fav.css";
 @import "footer.css";
 @import "header.css";
 @import "homepage.css";
 @import "results.css";
 @import "authen.css";
+@import "new-post.css";

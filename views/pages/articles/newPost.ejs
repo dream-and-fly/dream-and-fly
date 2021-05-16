@@ -1,64 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../../layouts/head') %>
-  <style>
-    .AddingNewPost__Container {
-      width: 80%;
-      margin: 50px auto;
-      display: grid;
-      grid-template-columns: 35% 60%;
-      gap: 5%;
-    }
-    .left-section__forAddingNewPost {
-      height: max-content;
-      display: grid;
-      background-color: rgba(114, 187, 187, 0.562);
-      grid-template-columns: 20% 60%;
-      justify-content: flex-end;
-    }
-    .left-section__forAddingNewPost input,
-    .left-section__forAddingNewPost textarea {
-      border: 2px solid brown;
-    }
-    .inner-leftSection label {
-      display: inline-block;
-      margin-top: 10px;
-    }
-    .left-section__forAddingNewPost .inner-leftSection * {
-      margin-bottom: 15px;
-    }
-    .right-section__forAddingNewPost>h2 {
-      font-size: x-large;
-    }
-    .right-section__forAddingNewPost * {
-      margin-bottom: 5px;
-    }
-    .right-section__forAddingNewPost .inner-rightSection {
-      margin-bottom: 20px;
-      font-size: small;
-      text-align: center;
-      border: 2px solid brown;
-    }
-    .inner-rightSection0 {
-      background-color: rgba(165, 42, 42, 0.633);
-    }
-    .inner-rightSection1 {
-      background-color: rgba(165, 42, 42, 0.433);
-    }
-    .inner-rightSection2 {
-      background-color: rgba(165, 42, 42, 0.133);
-    }
-    .right-section__forAddingNewPost img {
-      width: 30%;
-    }
-  </style>
 
   <body>
     <%- include('../../layouts/header') %>
       <!-- Your code here -->
       <div class="AddingNewPost__Container">
+        <!-- <h2>Add an Article</h2> -->
         <section class="left-section__forAddingNewPost">
-          <form class="inner-leftSection" action="/articles/new-post" method="POST">
+          <form class="inner-leftSection" action="/articles/admin/new-post" method="POST">
             <label for="author">Author</label>
             <input type="text" name="author" placeholder="author"><br>
             <label for="title">Title</label>
@@ -69,7 +19,7 @@
             <label for="description">Description</label>
             <textarea name="description" id="description" cols="30" rows="10" placeholder="Write ..."></textarea><br>
 
-            <button>ADD</button>
+            <button class="newPost_btns">ADD</button>
           </form>
         </section>
         <section class="right-section__forAddingNewPost">
@@ -78,37 +28,52 @@
             <section class="inner-rightSection inner-rightSection<%=index%>">
               <img src="<%=item.image %>">
               <h2>
-                <%=item.date %>
+                <%=item.title%>
               </h2>
               <h4>
-                <%=item.title%>
+                Article by: <%=item.author %>
               </h4>
+              <h5>
+                <%=item.date %>
+              </h5>
+              
               <p>
-                <%=item.author %>
-              </p>
-              <h3>
                 <%=item.description %>
-              </h3>
-              <form action="/articles/new-post?_method=delete" method="POST">
+              </p>
+              <form action="/articles/admin/new-post?_method=delete" method="POST">
                 <input type="hidden" name="deleteN" value="<%=item.id%>">
-                <button>DELETE</button>
+                <button class="newPost_btns newPost_delete">DELETE</button>
               </form>
               <section>
-                <button onclick="myFunction()" id="<%=item.id%>">UPDATE</button>
+                <button class="newPost_btns" onclick="myFunction()" id="<%=item.id%>">UPDATE</button>
                 <section>
-                  <form class="__admin_update __admin_update<%=item.id%>" action="/articles/new-post?_method=put"
+                  <form class="__admin_update __admin_update<%=item.id%>" action="/articles/admin/new-post?_method=put"
                     method="POST">
                     <input type="text" name="title" value=" <%= item.title  %> " placeholder="title" />
                     <input type="text" name="author" value="<%= item.author  %>" placeholder="author" />
-                    <input type="text" name="date" value="<%= item.date  %>" placeholder="date" />
                     <input type="text" name="image" value="<%= item.image  %>" placeholder="image" />
                     <textarea name="description" cols="30" rows="10" placeholder="description">
                   <%= item.description  %></textarea>
                     <input type="hidden" name="id" value="<%=item.id%>">
                 </section>
-                <button class="__admin_update_btn_form  __admin_update_btn_form<%=item.id%>">UPDATE</button>
+                <button class="newPost_btns __admin_update_btn_form  __admin_update_btn_form<%=item.id%>">UPDATE</button>
                 </form>
               </section>
+              <section class="__admin_add_NewPost">
+                <form action="/articles/admin/new-post" method="POST">
+                  <input type="hidden" name="add" value="<%=item.id%>">
+                  <button class="newPost_btns" >Add to Custmor Page</button>
+                </form>
+              </section>
+              <form action="/articles/admin/new-post?_method=delete" method="POST">
+                <input type="hidden" name="deletefromCustmorpage" value="<%=item.id%>">
+                <button class="newPost_btns" >DELETE From Custmor Page</button>
+              </form>
+              <%addedDataCheck.forEach(item2=>{%>
+                <%if(item.id===item2.id){ %>
+                  <p class="added_paragraph_for_admin">THIS ARTICLE WAS ADDED</p>
+                  <%}%>
+                    <%})%>
             </section>
             <%})%>
       </div>

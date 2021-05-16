@@ -77,18 +77,14 @@ router.put("/admin", (req, res) => {
     .query(SQL, safeValues)
     .then(res.redirect("/articles/admin"))
     .catch((err) => {
-      res.render("pages/error", {
-        error: err,
-        title: "Error",
-      });
+      res.render("pages/error", { error: err, title: "Error" });
     });
 });
 
 router.delete("/admin", (req, res) => {
   let { deleteN } = req.body;
   let { Delete_root_articles_id } = req.body;
-  console.log(deleteN);
-  console.log(Delete_root_articles_id);
+
   let SQL = deleteN
     ? deleteN === "All"
       ? client.query(`DELETE FROM articlesforcustmor ;`)
@@ -100,6 +96,8 @@ router.delete("/admin", (req, res) => {
   SQL.then(() => {
     // console.log(SQL);
     res.redirect("/articles/admin");
+  }).catch((err) => {
+    res.render("pages/error", { error: err, title: "Error" });
   });
 });
 
@@ -118,50 +116,75 @@ router.get("/article/:id", (req, res) => {
     });
 });
 
-router.get("/new-post", (req, res) => {
-  let SQL = `SELECT * FROM articles ORDER BY id DESC LIMIT 3;`;
-  client.query(SQL).then((result) => {
-    res.render("pages/articles/newPost", {
-      newArticlesAddes: result.rows,
-      title: "new Post",
+router.get("/admin/new-post", (req, res) => {
+  let SQL = `SELECT * FROM articles ORDER BY id DESC LIMIT 3; select * from articles inner join articlesforcustmor on articles.id=articlesforcustmor.id ;`;
+  client
+    .query(SQL)
+    .then((result) => {
+      res.render("pages/articles/newPost", {
+        newArticlesAddes: result[0].rows,
+        addedDataCheck: result[1].rows,
+        title: "New Post",
+      });
+    })
+    .catch((err) => {
+      res.render("pages/error", { error: err, title: "Error" });
     });
-  });
 });
 
-router.post("/new-post", (req, res) => {
+router.post("/admin/new-post", (req, res) => {
   let { image, title, author, description } = req.body;
-  // let date = new Date();
+  let { add } = req.body;
+
   let date = new Intl.DateTimeFormat("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
   }).format(new Date());
-
-  let SQL = `INSERT INTO articles (date ,image, title, author, description) VALUES ($1,$2,$3,$4,$5) RETURNING *; `;
   let safeValues = [date, image, title, author, description];
 
-  client.query(SQL, safeValues).then((result) => {
-    res.redirect("/articles/new-post");
+  let SQL = add
+    ? client.query(`INSERT INTO articlesforcustmor (id) VALUES ($1);`, [add])
+    : client.query(
+        `INSERT INTO articles (date ,image, title, author, description) VALUES ($1,$2,$3,$4,$5) RETURNING *; `,
+        safeValues
+      );
+
+  SQL.then((result) => {
+    res.redirect("/articles/admin/new-post");
+  }).catch((err) => {
+    res.render("pages/error", { error: err, title: "Error" });
   });
 });
 
-router.put("/new-post", (req, res) => {
+router.put("/admin/new-post", (req, res) => {
   let { image, date, title, author, description, id } = req.body;
   let SQL = `UPDATE articles SET image=$1, date=$2, title=$3, author=$4, description=$5 WHERE id=$6;`;
   let safeValues = [image, date, title, author, description, id];
 
   client
     .query(SQL, safeValues)
-    .then(res.redirect("/articles/new-post"))
+    .then(res.redirect("/articles/admin/new-post"))
     .catch((err) => {
       res.render("pages/error", { error: err, title: "Error" });
     });
 });
 
-router.delete("/new-post", (req, res) => {
-  let SQL = `DELETE FROM articles WHERE id =$1;`;
-  let safeValues = [req.body.deleteN];
-  client.query(SQL, safeValues).then(res.redirect("/articles//new-post"));
+router.delete("/admin/new-post", (req, res) => {
+  let { deleteN } = req.body;
+  let { deletefromCustmorpage } = req.body;
+
+  let SQL = deleteN
+    ? client.query(`DELETE FROM articles WHERE id =$1;`, [deleteN])
+    : client.query(`DELETE FROM articlesforcustmor WHERE id=$1;`, [
+        deletefromCustmorpage,
+      ]);
+
+  SQL.then(() => {
+    res.redirect("/articles/admin/new-post");
+  }).catch((err) => {
+    res.render("pages/error", { error: err, title: "Error" });
+  });
 });
 
 module.exports = router;

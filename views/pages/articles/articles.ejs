@@ -7,17 +7,16 @@
     <% console.log(date) //////////////////// %> <%-
     include('../../layouts/header') %>
     <!-- Your code here -->
-
-    <div class="__admin_div">
+    <div class="articles_contanier">
       <% articlesDataforCustomer.forEach((item,index)=>{ %>
-      <section>
+      <section class="articles_result">
         <img src="<%=item.image %>" />
-        <h2><%=item.date %></h2>
-        <h4><%=item.title%></h4>
-        <p><%=item.author %></p>
-        <h3><%=item.description %></h3>
+        <h2><%=item.title%></h2>
+        <h4>Article by: <%=item.author %></h4>
+        <h5><%=item.date %></h5>
+        <p><%=item.description %></p>
         <form action="/articles/article/<%=item.id%>">
-          <button type="submit">Read more →</button>
+          <button type="submit" id="articles_btn">Read more →</button>
         </form>
       </section>
       <%})%>

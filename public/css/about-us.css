@@ -1,0 +1,468 @@
+.aboutUs_body {
+  background-image: url("/background.jpg");
+  /* background-repeat: no-repeat; */
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes yourAnimation {
+  0% {
+    transform: skewX(15deg);
+    width: 0;
+    height: 0;
+  }
+  26% {
+    transform: skewX(0);
+  }
+  58% {
+    transform: skewX(15deg);
+    box-shadow: 4px 4px 5px;
+  }
+  100% {
+    box-shadow: rgb(65, 65, 65) 4px 4px 5px;
+  }
+}
+
+/* laptops */
+@media (min-width: 1200px) {
+  .aboutUs_team {
+    width: 80%;
+    margin-left: 10%;
+    height: 757px;
+  }
+  .aboutUs_common {
+    background-color: white;
+    width: 300px;
+    height: 400px;
+    border-radius: 20%;
+    position: absolute;
+    opacity: 80%;
+    animation: yourAnimation 1s forwards 0s ease-in;
+  }
+  .aboutUs_memberOne {
+    margin-top: 250px;
+  }
+
+  .aboutUs_img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20%;
+    position: absolute;
+  }
+
+  .imghover {
+    border-radius: 50%;
+    width: 50%;
+    margin-top: 5px;
+    height: 50%;
+    margin-left: 25%;
+    position: static;
+    float: left;
+    opacity: 100%;
+  }
+
+  .aboutUs_memberTwo {
+    margin-left: 230px;
+  }
+  div:hover {
+    z-index: 1;
+    opacity: 80%;
+  }
+  .aboutUs_memberThree {
+    margin-top: 250px;
+    margin-left: 430px;
+    opacity: 100%;
+  }
+  .aboutUs_memberFour {
+    margin-left: 630px;
+  }
+
+  .aboutUs_memberFive {
+    margin-top: 250px;
+    margin-left: 830px;
+    opacity: 100%;
+  }
+
+  .aboutUs_h3 {
+    text-align: center;
+    color: black;
+    overflow: hidden;
+    height: 20px;
+    width: 190px;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    margin-top: 215px;
+    margin-left: 50px;
+  }
+  .aboutUs_h4 {
+    text-align: center;
+    color: #403121;
+    overflow: hidden;
+    height: 20px;
+    font-family: monospace;
+    font-size: 18px;
+    margin-top: 8px;
+  }
+  .aboutUs_p {
+    overflow: hidden;
+    width: 90%;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-left: 5%;
+    color: #27211a;
+  }
+  .aboutUs_contact {
+    margin-left: 30%;
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 50px 50px;
+    grid-template-rows: 50px;
+  }
+  .aboutUs_linkedIn {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .aboutUs_github {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .aboutUs_linkedIn img {
+    width: 100%;
+    height: 100%;
+  }
+  .aboutUs_github img {
+    width: 70%;
+    height: 70%;
+    margin-top: 8px;
+  }
+  .aboutUs_h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: "Antonio", sans-serif;
+    margin-top: 75px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .line {
+    border: 8px solid #4a4f50;
+    border-radius: 5px;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 130px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 800px) and (max-width: 1199px) {
+  .aboutUs_team {
+    width: 80%;
+    margin-left: 15%;
+    height: 700px;
+  }
+
+  .aboutUs_memberOne {
+    background-color: white;
+
+    opacity: 80%;
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    margin-top: 250px;
+
+    animation: yourAnimation 1s forwards 0s ease-in;
+  }
+
+  .aboutUs_img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .imghover {
+    border-radius: 50%;
+    width: 35%;
+    margin-top: 5px;
+    height: 35%;
+    margin-left: 30%;
+    position: static;
+    float: left;
+  }
+
+  .aboutUs_memberTwo {
+    background-color: white;
+
+    opacity: 80%;
+    width: 200px;
+    height: 300px;
+    margin-left: 150px;
+    position: absolute;
+    animation: yourAnimation 1s forwards 0s ease-in;
+  }
+  div:hover {
+    z-index: 1;
+  }
+  .aboutUs_memberThree {
+    background-color: white;
+
+    opacity: 80%;
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 300px;
+    animation: yourAnimation 1s forwards 0s ease-in;
+  }
+  .aboutUs_memberFour {
+    background-color: white;
+
+    opacity: 80%;
+    width: 200px;
+    height: 300px;
+    margin-left: 450px;
+    position: absolute;
+    animation: yourAnimation 1s forwards 0s ease-in;
+  }
+
+  .aboutUs_memberFive {
+    background-color: white;
+
+    opacity: 80%;
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 600px;
+    animation: yourAnimation 1s forwards 0s ease-in;
+  }
+
+  .aboutUs_h3 {
+    text-align: center;
+    color: black;
+    overflow: hidden;
+    height: 20px;
+    width: 190px;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    margin-top: 120px;
+    font-weight: bold;
+  }
+  .aboutUs_h4 {
+    text-align: center;
+    color: #403121;
+    overflow: hidden;
+    height: 20px;
+    font-family: monospace;
+    font-size: 16px;
+    margin-top: 6px;
+  }
+  .aboutUs_p {
+    overflow: hidden;
+    width: 90%;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    margin-top: 8px;
+    margin-left: 5%;
+    color: #27211a;
+  }
+
+  .aboutUs_contact {
+    display: grid;
+    margin-left: 35%;
+    margin-top: 10%;
+    grid-template-columns: 32px 32px;
+    grid-template-rows: 32px;
+  }
+  .aboutUs_linkedIn {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .aboutUs_github {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .aboutUs_linkedIn img {
+    width: 100%;
+    height: 100%;
+  }
+  .aboutUs_github img {
+    width: 70%;
+    height: 70%;
+    margin-top: 5px;
+  }
+
+  .aboutUs_h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: "Antonio", sans-serif;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .line {
+    border: 8px solid #4a4f50;
+    border-radius: 5px;
+    width: 50%;
+    margin-bottom: 80px;
+    margin-left: 25%;
+  }
+}
+
+/* Mopile */
+@media (max-width: 799px) {
+  .aboutUs_team {
+    width: 80%;
+    margin-left: 10%;
+    /* height: 700px; */
+  }
+
+  .aboutUs_memberOne {
+    background-color: white;
+    border-radius: 15%;
+
+    opacity: 80%;
+    width: 300px;
+    height: 400px;
+    margin-left: 10%;
+    animation: yourAnimation 1s forwards 0s ease-in;
+  }
+
+  .aboutUs_img {
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+  }
+
+  .aboutUs_memberTwo {
+    background-color: white;
+
+    border-radius: 15%;
+    opacity: 80%;
+    width: 300px;
+    height: 400px;
+    margin-left: 10%;
+    margin-top: 10%;
+
+    animation: yourAnimation 1s forwards 0s ease-in;
+  }
+
+  .aboutUs_memberThree {
+    background-color: white;
+
+    opacity: 80%;
+    border-radius: 15%;
+    width: 300px;
+    height: 400px;
+    margin-left: 10%;
+    margin-top: 10%;
+
+    animation: yourAnimation 1s forwards 0s ease-in;
+  }
+  .aboutUs_memberFour {
+    background-color: white;
+
+    border-radius: 15%;
+    opacity: 80%;
+    width: 300px;
+    height: 400px;
+    margin-left: 10%;
+    margin-top: 10%;
+
+    animation: yourAnimation 1s forwards 0s ease-in;
+  }
+
+  .aboutUs_memberFive {
+    background-color: white;
+
+    border-radius: 15%;
+    opacity: 80%;
+    width: 300px;
+    height: 400px;
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-bottom: 50px;
+    animation: yourAnimation 1s forwards 0s ease-in;
+  }
+
+  .aboutUs_h3 {
+    text-align: center;
+    color: black;
+    height: 20px;
+    width: 190px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-left: 50px;
+  }
+  .aboutUs_h4 {
+    text-align: center;
+    color: #403121;
+    height: 20px;
+    font-family: monospace;
+    font-size: 18px;
+    margin-top: 8px;
+  }
+  .aboutUs_p {
+    overflow: hidden;
+    width: 90%;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-left: 5%;
+    color: #27211a;
+  }
+
+  .aboutUs_contact {
+    display: grid;
+    margin-left: 35%;
+    margin-top: 5%;
+    grid-template-columns: 50px 50px;
+    grid-template-rows: 50px;
+  }
+  .aboutUs_linkedIn {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .aboutUs_github {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .aboutUs_linkedIn img {
+    width: 100%;
+    height: 100%;
+  }
+  .aboutUs_github img {
+    width: 70%;
+    height: 70%;
+    margin-top: 5px;
+  }
+  .aboutUs_h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: "Antonio", sans-serif;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .line {
+    border: 8px solid #4a4f50;
+    border-radius: 5px;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 80px;
+  }
+}
