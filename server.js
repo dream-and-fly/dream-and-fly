@@ -161,6 +161,10 @@ server.post("/results", (req, res) => {
   });
 });
 
+// AboutUs route
+server.get("/about-us", (req, res) => {
+  res.render("pages/about-us", { title: "About-Us" });
+});
 // HomePage route
 server.get("/", (req, res) => {
   res.render("pages/index", { title: "HomePage" });
