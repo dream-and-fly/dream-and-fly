@@ -8,8 +8,15 @@
     <%- include('../../layouts/header') %>
  
       <!-- Your code here -->
+      <div class="admin__authen">
+        <h1>Admin</h1>
 
+        <a href="/users/logout">Logout</a>
+    
+        <h4>Hello <%= user %></h4>
+      </div>
       <div class="__admin_contanier">
+
         <div class="__admin_div">
   
           <% articlesData.forEach((item,index)=>{ %>

@@ -11,7 +11,7 @@ CREATE TABLE articles (
 DROP TABLE IF EXISTS articlesforcustmor;
 CREATE TABLE articlesforcustmor (
   id integer PRIMARY KEY
-)
+);
 
 DROP TABLE IF EXISTS reviews;
 CREATE TABLE reviews (
@@ -22,6 +22,16 @@ CREATE TABLE reviews (
   rating NUMERIC,
   description TEXT
 );
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+  id BIGSERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(200) NOT NULL,
+  email VARCHAR(200) NOT NULL,
+  password VARCHAR(200) NOT NULL,
+  UNIQUE (email)
+);
+
 
 INSERT INTO reviews (city, date, title, author, description,rating) 
 VALUES('amman','14/5/2021', 'Amman is a beutiful city', 'Abdullah', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using , making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for  will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).','2');

@@ -4,7 +4,20 @@ const express = require("express");
 
 const router = express.Router();
 const client = require("../server.js");
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    // return res.redirect("/users/dashboard");
+    return res.redirect("/articles/admin");
+  }
+  next();
+}
 
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect("/users/login");
+}
 // Put your routes here
 
 // /articles
@@ -20,11 +33,11 @@ router.get("/", function (req, res) {
       });
     })
     .catch((err) => {
-      res.render("pages/error", { error: err });
+      res.render("pages/error", { error: err, title: "Error" });
     });
 });
 
-router.get("/admin", (req, res) => {
+router.get("/admin", checkNotAuthenticated, (req, res) => {
   let SQL = `SELECT * FROM articles; select * from articles inner join articlesforcustmor on articles.id=articlesforcustmor.id; `;
   client
     .query(SQL)
@@ -33,10 +46,11 @@ router.get("/admin", (req, res) => {
         articlesData: result[0].rows,
         addedDataCheck: result[1].rows,
         title: "Admin",
+        user: req.user.name,
       });
     })
     .catch((err) => {
-      res.render("pages/error", { error: err, title: "results" });
+      res.render("pages/error", { error: err, title: "Error" });
     });
 });
 
@@ -50,7 +64,7 @@ router.post("/admin", (req, res) => {
     .query(SQL, safeValues)
     .then(res.redirect("/articles/admin"))
     .catch((err) => {
-      res.render("pages/error", { error: err });
+      res.render("pages/error", { error: err, title: "Error" });
     });
 });
 
@@ -63,7 +77,10 @@ router.put("/admin", (req, res) => {
     .query(SQL, safeValues)
     .then(res.redirect("/articles/admin"))
     .catch((err) => {
-      res.render("pages/error", { error: err });
+      res.render("pages/error", {
+        error: err,
+        title: "Error",
+      });
     });
 });
 
@@ -97,7 +114,7 @@ router.get("/article/:id", (req, res) => {
       });
     })
     .catch((err) => {
-      res.render("pages/error", { error: err });
+      res.render("pages/error", { error: err, title: "Error" });
     });
 });
 
@@ -137,7 +154,7 @@ router.put("/new-post", (req, res) => {
     .query(SQL, safeValues)
     .then(res.redirect("/articles/new-post"))
     .catch((err) => {
-      res.render("pages/error", { error: err });
+      res.render("pages/error", { error: err, title: "Error" });
     });
 });
 
