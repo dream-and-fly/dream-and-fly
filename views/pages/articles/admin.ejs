@@ -6,12 +6,12 @@
 
 
     <%- include('../../layouts/header') %>
- 
+
       <!-- Your code here -->
 
       <div class="__admin_contanier">
         <div class="__admin_div">
-  
+
           <% articlesData.forEach((item,index)=>{ %>
             <section>
               <img src="<%=item.image %>">
@@ -29,11 +29,6 @@
                 </h3> -->
               <section class="__admin_add">
                 <form action="/articles/admin" method="POST">
-                  <input type="hidden" name="image" value="<%=item.image%>">
-                  <input type="hidden" name="title" value="<%=item.title%>">
-                  <input type="hidden" name="author" value="<%=item.author%>">
-                  <input type="hidden" name="description" value="<%=item.description%>">
-                  <input type="hidden" name="date" value="<%=item.date%>">
                   <input type="hidden" name="id" value="<%=item.id%>">
                   <button>Add</button>
                 </form>
@@ -51,7 +46,6 @@
                     method="POST">
                     <input type="text" name="title" value=" <%= item.title  %> " placeholder="title" />
                     <input type="text" name="author" value="<%= item.author  %>" placeholder="author" />
-                    <input type="text" name="date" value="<%= item.date  %>" placeholder="date" />
                     <input type="text" name="image" value="<%= item.image  %>" placeholder="image" />
                     <textarea name="description" cols="30" rows="10" placeholder="description">
                   <%= item.description  %></textarea>
@@ -68,7 +62,7 @@
             </section>
             <% }) %>
         </div>
-  
+
         <div class="__admin_sidebar_section">
           <br>
           <h1>Articles Area for Custmor</h1><br>
@@ -99,7 +93,6 @@
                     method="POST">
                     <input type="text" name="title" value=" <%= item.title  %> " placeholder="title" />
                     <input type="text" name="author" value="<%= item.author  %>" placeholder="author" />
-                    <input type="text" name="date" value="<%= item.date  %>" placeholder="date" />
                     <input type="text" name="image" value="<%= item.image  %>" placeholder="image" />
                     <textarea name="description" cols="30" rows="10" placeholder="description">
                   <%= item.description  %></textarea>
@@ -110,12 +103,12 @@
               </section>
             </section>
             <%})%>
-  
-  
-              <form action="/articles/new-post">
+
+
+              <form action="/articles/admin/new-post">
                 <button>Add new post</button>
               </form>
-  
+
               <form action="/articles">
                 <button>Show as a Custmor</button>
               </form>

@@ -9,6 +9,7 @@
       grid-template-columns: 35% 60%;
       gap: 5%;
     }
+
     .left-section__forAddingNewPost {
       height: max-content;
       display: grid;
@@ -16,38 +17,48 @@
       grid-template-columns: 20% 60%;
       justify-content: flex-end;
     }
+
     .left-section__forAddingNewPost input,
     .left-section__forAddingNewPost textarea {
       border: 2px solid brown;
     }
+
     .inner-leftSection label {
       display: inline-block;
       margin-top: 10px;
     }
+
     .left-section__forAddingNewPost .inner-leftSection * {
       margin-bottom: 15px;
     }
+
     .right-section__forAddingNewPost>h2 {
       font-size: x-large;
     }
+
     .right-section__forAddingNewPost * {
       margin-bottom: 5px;
     }
+
     .right-section__forAddingNewPost .inner-rightSection {
       margin-bottom: 20px;
       font-size: small;
       text-align: center;
       border: 2px solid brown;
     }
+
     .inner-rightSection0 {
       background-color: rgba(165, 42, 42, 0.633);
     }
+
     .inner-rightSection1 {
       background-color: rgba(165, 42, 42, 0.433);
     }
+
     .inner-rightSection2 {
       background-color: rgba(165, 42, 42, 0.133);
     }
+
     .right-section__forAddingNewPost img {
       width: 30%;
     }
@@ -58,7 +69,7 @@
       <!-- Your code here -->
       <div class="AddingNewPost__Container">
         <section class="left-section__forAddingNewPost">
-          <form class="inner-leftSection" action="/articles/new-post" method="POST">
+          <form class="inner-leftSection" action="/articles/admin/new-post" method="POST">
             <label for="author">Author</label>
             <input type="text" name="author" placeholder="author"><br>
             <label for="title">Title</label>
@@ -89,18 +100,17 @@
               <h3>
                 <%=item.description %>
               </h3>
-              <form action="/articles/new-post?_method=delete" method="POST">
+              <form action="/articles/admin/new-post?_method=delete" method="POST">
                 <input type="hidden" name="deleteN" value="<%=item.id%>">
                 <button>DELETE</button>
               </form>
               <section>
                 <button onclick="myFunction()" id="<%=item.id%>">UPDATE</button>
                 <section>
-                  <form class="__admin_update __admin_update<%=item.id%>" action="/articles/new-post?_method=put"
+                  <form class="__admin_update __admin_update<%=item.id%>" action="/articles/admin/new-post?_method=put"
                     method="POST">
                     <input type="text" name="title" value=" <%= item.title  %> " placeholder="title" />
                     <input type="text" name="author" value="<%= item.author  %>" placeholder="author" />
-                    <input type="text" name="date" value="<%= item.date  %>" placeholder="date" />
                     <input type="text" name="image" value="<%= item.image  %>" placeholder="image" />
                     <textarea name="description" cols="30" rows="10" placeholder="description">
                   <%= item.description  %></textarea>
@@ -110,7 +120,14 @@
                 </form>
               </section>
             </section>
-            <%})%>
+
+            <section class="__admin_add_NewPost">
+              <form action="/articles/admin/new-post" method="POST">
+                <input type="hidden" name="add" value="<%=item.id%>">
+                <button>Add</button>
+              </form>
+
+              <%})%>
       </div>
 
 
