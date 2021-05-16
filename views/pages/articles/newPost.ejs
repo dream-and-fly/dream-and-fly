@@ -62,6 +62,13 @@
     .right-section__forAddingNewPost img {
       width: 30%;
     }
+
+    .added_paragraph_for_admin {
+      background-color: rgba(0, 128, 0, 0.664);
+      font-size: 20px;
+      text-align: center;
+      word-spacing: 15px;
+    }
   </style>
 
   <body>
@@ -119,15 +126,21 @@
                 <button class="__admin_update_btn_form  __admin_update_btn_form<%=item.id%>">UPDATE</button>
                 </form>
               </section>
+              <section class="__admin_add_NewPost">
+                <form action="/articles/admin/new-post" method="POST">
+                  <input type="hidden" name="add" value="<%=item.id%>">
+                  <button>Add</button>
+                </form>
+              </section>
+              <%addedDataCheck.forEach(item2=>{%>
+                <%if(item.id===item2.id){ %>
+                  <p class="added_paragraph_for_admin">THIS ARTICLE WAS ADDED</p>
+                  <%}%>
+                    <%})%>
             </section>
 
-            <section class="__admin_add_NewPost">
-              <form action="/articles/admin/new-post" method="POST">
-                <input type="hidden" name="add" value="<%=item.id%>">
-                <button>Add</button>
-              </form>
 
-              <%})%>
+            <%})%>
       </div>
 
 

@@ -20,7 +20,7 @@ router.get('/', function (req, res) {
       });
     })
     .catch(err => {
-      res.render('pages/error', { error: err });
+      res.render('pages/error', { error: err, title: 'Error' });
     });
 });
 
@@ -36,7 +36,7 @@ router.get('/admin', (req, res) => {
       });
     })
     .catch(err => {
-      res.render('pages/error', { error: err, title: 'results' });
+      res.render('pages/error', { error: err, title: 'Error' });
     });
 });
 
@@ -50,7 +50,7 @@ router.post('/admin', (req, res) => {
     .query(SQL, safeValues)
     .then(res.redirect('/articles/admin'))
     .catch(err => {
-      res.render('pages/error', { error: err });
+      res.render('pages/error', { error: err, title: 'Error' });
     });
 });
 
@@ -63,7 +63,7 @@ router.put('/admin', (req, res) => {
     .query(SQL, safeValues)
     .then(res.redirect('/articles/admin'))
     .catch(err => {
-      res.render('pages/error', { error: err });
+      res.render('pages/error', { error: err, title: 'Error' });
     });
 });
 
@@ -84,7 +84,7 @@ router.delete('/admin', (req, res) => {
     // console.log(SQL);
     res.redirect('/articles/admin');
   }).catch(err => {
-    res.render('pages/error', { error: err });
+    res.render('pages/error', { error: err, title: 'Error' });
   });
 });
 
@@ -99,22 +99,23 @@ router.get('/article/:id', (req, res) => {
       });
     })
     .catch(err => {
-      res.render('pages/error', { error: err });
+      res.render('pages/error', { error: err, title: 'Error' });
     });
 });
 
 router.get('/admin/new-post', (req, res) => {
-  let SQL = `SELECT * FROM articles ORDER BY id DESC LIMIT 3;`;
+  let SQL = `SELECT * FROM articles ORDER BY id DESC LIMIT 3; select * from articles inner join articlesforcustmor on articles.id=articlesforcustmor.id ;`;
   client
     .query(SQL)
     .then(result => {
       res.render('pages/articles/newPost', {
-        newArticlesAddes: result.rows,
-        title: 'new Post',
+        newArticlesAddes: result[0].rows,
+        addedDataCheck: result[1].rows,
+        title: 'New Post',
       });
     })
     .catch(err => {
-      res.render('pages/error', { error: err });
+      res.render('pages/error', { error: err, title: 'Error' });
     });
 });
 
@@ -138,8 +139,6 @@ router.post('/admin/new-post', (req, res) => {
 
   SQL.then(result => {
     res.redirect('/articles/admin/new-post');
-  }).catch(err => {
-    res.render('pages/error', { error: err });
   });
 });
 
@@ -152,7 +151,7 @@ router.put('/admin/new-post', (req, res) => {
     .query(SQL, safeValues)
     .then(res.redirect('/articles/admin/new-post'))
     .catch(err => {
-      res.render('pages/error', { error: err });
+      res.render('pages/error', { error: err, title: 'Error' });
     });
 });
 
@@ -163,7 +162,7 @@ router.delete('/admin/new-post', (req, res) => {
     .query(SQL, safeValues)
     .then(res.redirect('/articles/admin/new-post'))
     .catch(err => {
-      res.render('pages/error', { error: err });
+      res.render('pages/error', { error: err, title: 'Error' });
     });
 });
 
