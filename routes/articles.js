@@ -138,6 +138,8 @@ router.post('/admin/new-post', (req, res) => {
 
   SQL.then(result => {
     res.redirect('/articles/admin/new-post');
+  }).catch(err => {
+    res.render('pages/error', { error: err, title: 'Error' });
   });
 });
 
@@ -155,15 +157,6 @@ router.put('/admin/new-post', (req, res) => {
 });
 
 router.delete('/admin/new-post', (req, res) => {
-  // let SQL = `DELETE FROM articles WHERE id =$1;`;
-  // let safeValues = [req.body.deleteN];
-  // client
-  //   .query(SQL, safeValues)
-  //   .then(res.redirect('/articles/admin/new-post'))
-  //   .catch(err => {
-  //     res.render('pages/error', { error: err, title: 'Error' });
-  //   });
-
   let { deleteN } = req.body;
   let { deletefromCustmorpage } = req.body;
 
