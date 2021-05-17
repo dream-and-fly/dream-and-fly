@@ -81,9 +81,7 @@
             <div class="country__data">
               <h3 class="country__name">Covid-19</h3>
               <h4 class="country__region">Data</h4>
-              <p class="country__row">
-                <span>😷</span><%= covidApi.confirmed%>
-              </p>
+              <p class="country__row"><span>😷</span><%= covidApi.now%></p>
               <p class="country__row">
                 <span>💪</span><%= covidApi.recovered%>
               </p>
@@ -182,7 +180,7 @@
         <div class="resutls__DB__div">
           <div class="results__DB__div__head">
             <h1>
-              Add review for <%= `${city[0].toUpperCase() + city.slice(1)}` %>
+              Add a review for <%= `${city[0].toUpperCase() + city.slice(1)}` %>
             </h1>
           </div>
           <hr />
