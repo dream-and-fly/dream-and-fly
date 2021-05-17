@@ -29,22 +29,22 @@ $(".aboutUs_memberFive").on("mouseover", () => {
   $(".imgFive").addClass("imghover");
 });
 
-$(".aboutUs_memberOne").on("mouseout", () => {
-  $(".imgOne").removeClass("imghover");
-});
+// $(".aboutUs_memberOne").on("mouseout", () => {
+//   $(".imgOne").removeClass("imghover");
+// });
 
-$(".aboutUs_memberTwo").on("mouseout", () => {
-  $(".imgTwo").removeClass("imghover");
-});
+// $(".aboutUs_memberTwo").on("mouseout", () => {
+//   $(".imgTwo").removeClass("imghover");
+// });
 
-$(".aboutUs_memberThree").on("mouseout", () => {
-  $(".imgThree").removeClass("imghover");
-});
+// $(".aboutUs_memberThree").on("mouseout", () => {
+//   $(".imgThree").removeClass("imghover");
+// });
 
-$(".aboutUs_memberFour").on("mouseout", () => {
-  $(".imgFour").removeClass("imghover");
-});
+// $(".aboutUs_memberFour").on("mouseout", () => {
+//   $(".imgFour").removeClass("imghover");
+// });
 
-$(".aboutUs_memberFive").on("mouseout", () => {
-  $(".imgFive").removeClass("imghover");
-});
+// $(".aboutUs_memberFive").on("mouseout", () => {
+//   $(".imgFive").removeClass("imghover");
+// });
