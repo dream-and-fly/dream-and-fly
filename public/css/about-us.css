@@ -203,9 +203,9 @@
     position: absolute;
     animation: yourAnimation 1s forwards 0s ease-in;
   }
-  div:hover {
+  /* div:hover {
     z-index: 1;
-  }
+  } */
   .aboutUs_memberThree {
     background-color: white;
 

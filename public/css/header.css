@@ -27,3 +27,222 @@
 
   /* align-self: center; */
 }
+
+@media screen and (min-width: 768px) {
+  /* bodyd */
+  .homepage__body {
+  }
+  /* header */
+  .shared__header {
+    position: relative;
+    background-color: var(--first-color);
+    color: blcak;
+    height: var(--header-hight);
+    font-family: "Montserrat", sans-serif;
+  }
+  .shared__header a {
+    color: white;
+  }
+
+  .shared__header .headerdiv {
+  }
+
+  .shared__header .headerdiv nav {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+  }
+  .shared__header .headerdiv img {
+    height: var(--header-hight);
+    width: 180px;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+  }
+
+  .shared__header .headerdiv ul {
+    display: flex;
+    list-style: none;
+    color: white;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .shared__header ul li {
+    margin-right: 25px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+
+  #updateBtn {
+    color: var(--third-color);
+    font-weight: 700;
+  }
+
+  /* dropdown */
+
+  .dropdown-content {
+    position: absolute;
+    left: 0px;
+    top: var(--header-hight);
+    background-color: #2d8ae2a6;
+    /* opacity: 0.1; */
+
+    /* height: 200px; */
+    width: 100%;
+    /* margin-top: -30px; */
+    box-shadow: rgb(134, 134, 134) 1px 1px 4px;
+    color: rgb(0, 0, 0);
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .text-div {
+    /* margin-top: 30px; */
+    padding-top: 30px;
+    width: 20%;
+    padding-left: 20px;
+    letter-spacing: none;
+  }
+
+  .text-div ul {
+    list-style: none;
+    letter-spacing: 1px;
+  }
+
+  .text-div ul li h5 {
+    list-style: none;
+    color: rgb(190, 175, 135);
+    font-family: monospace;
+  }
+
+  .a-dropdown {
+    color: rgb(0, 0, 0);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* bodyd */
+  .homepage__body {
+  }
+  /* header */
+  .shared__header {
+    position: relative;
+    background-color: rgb(37, 37, 38);
+    color: rgb(190, 175, 135);
+    padding: 0px 20px;
+    /* overflow: hidden; */
+    font-family: "Open Sans Condensed", sans-serif;
+
+    /* display: flex; */
+
+    /* display: flex; */
+  }
+
+  .shared__header .headerdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 16vh;
+
+    /* line-height: 40px; */
+  }
+  .shared__header .headerdiv nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .shared__header .headerdiv h2 {
+    font-size: 10px;
+    letter-spacing: 3px;
+    /* margin-right: 100px; */
+    font-family: "Antonio", sans-serif;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+  }
+
+  .shared__header .headerdiv ul {
+    display: flex;
+    list-style: none;
+    color: white;
+    font-weight: 300;
+    margin-left: 20px;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 10px;
+  }
+
+  .shared__header ul li {
+    margin-right: 25px;
+    letter-spacing: 3px;
+    cursor: pointer;
+  }
+
+  /* .shared__header ul li:hover {
+    color: rgb(190, 175, 135);
+  } */
+
+  #updateBtn {
+    color: rgb(190, 175, 135);
+  }
+
+  .shared__header .phone_number {
+    /* margin-left: 570px; */
+    font-size: 5px;
+    display: none;
+  }
+
+  /* dropdown */
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .dropdown-content {
+    position: absolute;
+    left: 0px;
+    top: 16vh;
+    background-color: white;
+    /* height: 200px; */
+    width: 100%;
+    /* margin-top: -30px; */
+    box-shadow: rgb(134, 134, 134) 1px 1px 4px;
+    color: rgb(0, 0, 0);
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    font-size: 10px;
+  }
+
+  .text-div {
+    /* margin-top: 30px; */
+    padding-top: 30px;
+    width: 20%;
+    padding-left: 20px;
+    letter-spacing: none;
+  }
+
+  .text-div ul {
+    list-style: none;
+    letter-spacing: 1px;
+  }
+
+  .text-div ul li h5 {
+    list-style: none;
+    color: rgb(190, 175, 135);
+    font-family: monospace;
+  }
+
+  .dropdown-content div img {
+    /* float: right; */
+    /* margin-left: 500px; */
+  }
+
+  .a-dropdown {
+    color: rgb(0, 0, 0);
+  }
+}

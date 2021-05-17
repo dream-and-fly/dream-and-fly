@@ -1,3 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&family=Open+Sans+Condensed:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Antonio&family=Open+Sans+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+:root {
+  --first-color: #1b71c1;
+  --secondery-color: #2d8be2;
+  --third-color: #134f86;
+  --fourth-color: #b11785;
+  --section-padding: 60px;
+  --section-background: #f6f6f6;
+  --header-hight: 16vh;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -9,4 +25,8 @@ html {
 
 a {
   text-decoration: none;
+}
+
+.invisible {
+  visibility: hidden;
 }

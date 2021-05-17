@@ -13,12 +13,12 @@
               HORIZONS
             </p>
             <p class="detail-box-content-2">
-              DON`T AFRAID <br />
-              FOR DREAMING
+              DON`T BE AFRAID <br />
+              OF DREAMING
             </p>
           </section>
 
-          <section>
+          <section class="homepage__form__section">
             <form action="/results/" method="GET" class="homepage__searchform">
               <input
                 name="search_query"
@@ -41,6 +41,7 @@
         <section class="articles__sections" id="articles-explor">
           <div class="aticles-text">
             <div class="about-site">
+              <!-- <div class="homepage__overlay"></div> -->
               <h4>GURANTEED 100%</h4>
               <h2>DREAM & FLY</h2>
               <p>
@@ -66,10 +67,10 @@
                   You take something with you. Hopefully, you leave something
                   good behind.” – Anthony Bourdain
                 </p>
-                <a href="/about-us"
-                  ><button class="about-us-btn">About Us</button></a
-                >
               </div>
+              <a href="/about-us"
+                ><button class="about-us-btn">About Us</button></a
+              >
             </div>
           </div>
           <div class="aticles-img">
@@ -81,17 +82,11 @@
           <div class="aticles-text1">
             <h4>LEADING FOR GLORY</h4>
             <h2>WORLDWIDE EXPERIENCE</h2>
-            <h5>TEST YOUR DREAMS</h5>
-            <h6>
-              Since We Joined ASAC, Dream & Fly Team has set the standard To
-              Achive Our Goals. So, when it comes to your dream, never settle.
-              Move with Us the Dream & Fly Team on your side.
-            </h6>
           </div>
           <div class="articles__templete_div">
-            <div class="article-template">
+            <div class="slider">
               <% posts.forEach(element => { %>
-              <div class="article-template-text">
+              <div class="slide">
                 <a href="/articles/article/<%= element.id %>?"
                   ><h3><%= element.title %></h3></a
                 >
@@ -99,9 +94,18 @@
                 <img src="<%= element.image %>" alt="" />
               </div>
               <% }) %>
+              <button class="slider__btn slider__btn--left invisible">
+                &larr;
+              </button>
+              <button class="slider__btn slider__btn--right invisible">
+                &rarr;
+              </button>
+              <div class="dots"></div>
             </div>
           </div>
         </section>
+
+        <section></section>
       </main>
       <%- include('../layouts/footer') %>
     </div>
