@@ -88,36 +88,17 @@
               Move with Us the Dream & Fly Team on your side.
             </h6>
           </div>
-          <div class="article-template">
-            <div class="article-template-text">
-              <h3>ARTICLE TITLE</h3>
-              <img
-                src="https://via.placeholder.com/300.png/
-  
-              C/O https://placeholder.com/"
-                alt=""
-              />
-              <P>descriptions </P>
-            </div>
-            <div class="article-template-text">
-              <h3>ARTICLE TITLE2</h3>
-              <img
-                src="https://via.placeholder.com/300.png/
-  
-              C/O https://placeholder.com/"
-                alt=""
-              />
-              <P>descriptions </P>
-            </div>
-            <div class="article-template-text">
-              <h3>ARTICLE TITLE3</h3>
-              <img
-                src="https://via.placeholder.com/300.png/
-  
-              C/O https://placeholder.com/"
-                alt=""
-              />
-              <P>descriptions </P>
+          <div class="articles__templete_div">
+            <div class="article-template">
+              <% posts.forEach(element => { %>
+              <div class="article-template-text">
+                <a href="/articles/article/<%= element.id %>?"
+                  ><h3><%= element.title %></h3></a
+                >
+
+                <img src="<%= element.image %>" alt="" />
+              </div>
+              <% }) %>
             </div>
           </div>
         </section>

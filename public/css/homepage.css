@@ -339,13 +339,30 @@
     letter-spacing: 0px;
     margin-bottom: 30px;
   }
-
+  .articles__templete_div {
+    background-color: rgba(219, 215, 215, 0.308);
+    padding: 40px 40px;
+  }
   .article-template {
     display: flex;
     /* align-self: center; */
     justify-content: space-evenly;
     font-family: "Open Sans Condensed", sans-serif;
-    font-size: 30px;
+    /* font-size: 30px; */
+  }
+
+  .article-template a {
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    height: 20%;
+  }
+
+  .article-template img {
+    width: 70%;
+    height: 80%;
+    box-shadow: rgb(151, 142, 142) 1px 1px 5px;
   }
   .article-template-text {
     display: flex;
