@@ -101,7 +101,7 @@ initializePassport(passport);
 
 const client = new pg.Client({
   connectionString: process.env.DATABASE_URL,
-  // ssl: { rejectUnauthorized: false },
+  ssl: { rejectUnauthorized: false },
 });
 server.use(express.urlencoded({ extended: true }));
 server.set("view engine", "ejs");
@@ -156,6 +156,7 @@ function CountryInfo(items) {
 function Covid(items) {
   this.confirmed = items.confirmed;
   this.recovered = items.recovered;
+  this.now = Number(this.confirmed) - Number(this.recovered);
   this.deaths = items.deaths;
 }
 // results route ------- most IMPORTANT route ---- APIs here
@@ -185,6 +186,7 @@ server.get("/results", (req, res) => {
     }`;
     return superagent.get(url).then((covidData) => {
       let Data = covidData.body.All;
+      console.log(Data);
       let CovidObjects = new Covid(Data);
       return CovidObjects;
     });
