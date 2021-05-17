@@ -1,21 +1,31 @@
 .login__main {
-  height: 70vh;
-  margin-top: 50px;
-
-  /* margin: 50px 0px; */
+  height: 84vh;
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
 }
 .login__login__box {
-  gap: 10px;
-  width: 50%;
-  height: 50%;
-  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-self: center;
+  /* position: absolute; */
+  /* top: 42vh; */
+  gap: 10px;
+  width: 50%;
+  height: 70%;
+  margin: 0px auto;
   border: solid 1px black;
-  background-color: #252526;
+  background-color: var(--secondery-color);
   color: white;
+}
+.login__login__box i {
+  font-size: 40px;
+}
+
+.login__login__box:hover {
+  background-color: var(--first-color);
 }
 .login__login__box h1 {
   font-size: 32px;
@@ -32,16 +42,21 @@
 
 .login__login__box form input {
   width: 100%;
+  height: 5vh;
 }
-
+.login__login__box form input:hover {
+  background-color: rgb(255, 255, 255, 0.8);
+}
 .login__login__box form input[type="submit"] {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.3);
   border: none;
   color: white;
   padding: 10px 0px;
 }
 .login__login__box form input[type="submit"]:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+
+  cursor: pointer;
 }
 
 .admin__authen,
