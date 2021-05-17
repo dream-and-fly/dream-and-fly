@@ -393,7 +393,11 @@ function checkNotAuthenticated(req, res, next) {
 
 // HomePage route
 server.get("/", (req, res) => {
-  res.render("pages/index", { title: "HomePage" });
+  let SQL = `select * from articles inner join articlesforcustmor on articles.id=articlesforcustmor.id ORDER BY articlesforcustmor.id DESC LIMIT 3;`;
+  client.query(SQL).then((result) => {
+    // console.log(result.rows);
+    res.render("pages/index", { title: "HomePage", posts: result.rows });
+  });
 });
 
 // For any route that is not specified
