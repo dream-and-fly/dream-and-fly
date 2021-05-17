@@ -151,14 +151,14 @@
   margin-bottom: 10px;
 }
 .results__DB__div__head button {
-  background-color: rgb(190, 175, 135);
-  color: black;
+  background-color: var(--secondery-color);
+  color: white;
   padding: 0 20px;
   border: none;
   cursor: pointer;
 }
 .results__DB__div__head button:hover {
-  background-color: #3c3c3d;
+  background-color: var(--first-color);
   color: white;
 }
 .results__DB__div__head + hr {
@@ -175,14 +175,14 @@
   padding: 10px 0 10px 10px;
 }
 .results__DB__form input[type="submit"] {
-  background-color: #252526;
+  background-color: var(--secondery-color);
   color: #eee;
   border: none;
   cursor: pointer;
 }
 
 .results__DB__form input[type="submit"]:hover {
-  background-color: #3c3c3d;
+  background-color: var(--first-color);
 }
 .results__review__div {
   display: flex;

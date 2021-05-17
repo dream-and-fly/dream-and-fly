@@ -49,6 +49,28 @@ window.onclick = function (event) {
 //   $(".imgFive").removeClass("imghover");
 // });
 const nav = document.querySelector(".header__nav");
+// const articles = document.querySelector(".articles_contanier");
+// const handleHover2 = function (e) {
+//   if (e.target.classList.contains("nav__link") || e.target. ) {
+//     const link = e.target;
+//     const siblings = link
+//       .closest(".articles_contanier")
+//       .querySelectorAll(".nav__link");
+//     // const logo = link.closest(".header__nav").querySelector("img");
+//
+//     siblings.forEach((el) => {
+//       if (el !== link) {
+//         // logo.style.opacity = this;
+//         el.style.opacity = this;
+//       }
+//     });
+//   }
+// };
+//
+// // Passing "argument" into handler
+// articles.addEventListener("mouseover", handleHover2.bind(0.5));
+// articles.addEventListener("mouseout", handleHover2.bind(1));
+
 // Menu fade animation
 const handleHover = function (e) {
   if (e.target.classList.contains("nav__link")) {
