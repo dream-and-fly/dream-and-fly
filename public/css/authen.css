@@ -63,7 +63,6 @@
   cursor: pointer;
 }
 
-.admin__authen,
 .authen__index {
   display: flex;
   flex-direction: column;
@@ -77,7 +76,6 @@
   margin-bottom: 20px;
 }
 
-.admin__authen a,
 .authen__index a {
   color: black;
 }

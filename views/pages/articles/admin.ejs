@@ -9,44 +9,46 @@
 
       <!-- Your code here -->
       <div class="admin__authen">
-        <h1>Admin</h1>
-
-        <a href="/users/logout">Logout</a>
-    
         <h4>Hello <%= user %></h4>
+        
+        <h1>Admin Page</h1>
+        
+        <a href="/users/logout">Logout</a>
       </div>
       <div class="__admin_contanier">
         <div class="__admin_div">
 
           <% articlesData.forEach((item,index)=>{ %>
-            <section>
+            <section class="admin__admin_article">
               <img src="<%=item.image %>">
-              <h2>
-                <%=item.title%>
-              </h2>
-              <h4>
-                Article by: <%=item.author %>
-              </h4>
-              <h5>
-                <%=item.date %>
-              </h5>
+              <div class="admin__admin__article__info">
+                <h2>
+                  <%=item.title%>
+                </h2>
+                <h4>
+                  Article by: <%=item.author %>
+                </h4>
+                <h5>
+                  <%=item.date %>
+                </h5></div>
+              
               <!-- <h3>
                   <%=item.description %>
                 </h3> -->
-              <section class="__admin_add">
-                <form action="/articles/admin" method="POST">
-                  <input type="hidden" name="id" value="<%=item.id%>">
-                  <button>Add</button>
-                </form>
-              </section>
-              <section class="__admin_delete">
-                <form action="/articles/admin?_method=delete" method="POST">
-                  <input type="hidden" name="Delete_root_articles_id" value="<%=item.id%>">
-                  <button>DELETE</button>
-                </form>
-              </section>
-              <section>
-                <button onclick="myFunction()" id="<%=item.id%>">UPDATE</button>
+                <div class="admin_admin_btnss">
+                  <form class="__admin_add" action="/articles/admin" method="POST">
+                    <input type="hidden" name="id" value="<%=item.id%>">
+                    <button>Add</button>
+                  </form>
+                  <form  class="__admin_delete" action="/articles/admin?_method=delete" method="POST">
+                    <input type="hidden" name="Delete_root_articles_id" value="<%=item.id%>">
+                    <button>DELETE</button>
+                  </form>
+                  <button onclick="myFunction()" id="<%=item.id%>">UPDATE</button>
+                </div>
+
+
+              <section class="admin__admin__update">
                 <section>
                   <form class="__admin_update __admin_update<%=item.id%>" action="/articles/admin?_method=put"
                     method="POST">
@@ -62,7 +64,7 @@
               </section>
               <%addedDataCheck.forEach(item2=>{%>
                 <%if(item.id===item2.id){ %>
-                  <p class="added_paragraph_for_admin">THIS ARTICLE WAS ADDED</p>
+                  <div class="border__right"></div>
                   <%}%>
                     <%})%>
             </section>
