@@ -151,7 +151,7 @@ router.post("/admin/new-post", (req, res) => {
       );
 
   SQL.then((result) => {
-    res.redirect("/articles/admin/new-post");
+    res.redirect("/articles/admin");
   }).catch((err) => {
     res.render("pages/error", { error: err, title: "Error" });
   });

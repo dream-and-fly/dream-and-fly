@@ -2,7 +2,7 @@
   background-color: rgb(202, 202, 202);
 } */
 
-.AddingNewPost__Container {
+/* .AddingNewPost__Container {
   width: 80%;
   margin: 50px auto;
   display: grid;
@@ -63,8 +63,7 @@
   margin-top: 10px;
   border-radius: 20px;
 }
-/* .right-section__forAddingNewPost {
-  } */
+
 
 .right-section__forAddingNewPost h2 {
   margin-top: 10px;
@@ -111,4 +110,85 @@
 .newPost_btns:hover {
   font-weight: bold;
   background-color: #d3d3d3;
+} */
+
+.AddingNewPost__Container {
+  /* height: 84vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.AddingNewPost__Container h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 30px 0;
+}
+
+.login__main a {
+  color: white;
+}
+.left__section__forAddingNewPost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* align-self: center; */
+  /* position: absolute; */
+  /* top: 42vh; */
+  gap: 10px;
+  width: 50%;
+  height: 80vh;
+  margin: 0px auto;
+  border: solid 1px black;
+  background-color: var(--secondery-color);
+  color: white;
+}
+/* .left__section__forAddingNewPost i {
+  font-size: 40px;
+} */
+
+.left__section__forAddingNewPost:hover {
+  background-color: var(--first-color);
+}
+.left__section__forAddingNewPost h1 {
+  font-size: 32px;
+}
+
+.left__section__forAddingNewPost form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 70%;
+}
+
+.left__section__forAddingNewPost form input {
+  width: 100%;
+  height: 5vh;
+  padding-left: 10px;
+}
+.left__section__forAddingNewPost form textarea {
+  width: 100%;
+  /* height: 5vh; */
+  padding-left: 10px;
+}
+.left__section__forAddingNewPost form input:hover,
+.left__section__forAddingNewPost form textarea:hover {
+  background-color: rgb(255, 255, 255, 0.8);
+}
+.left__section__forAddingNewPost form button {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  padding: 10px 0px;
+  width: 100%;
+}
+.left__section__forAddingNewPost form button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
 }
