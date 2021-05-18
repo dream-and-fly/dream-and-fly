@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../../layouts/head') %>
+  <body>
+    <% var today = new Date(); %> <% var date
+    =today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(); ////// %>
+    <% console.log(date) //////////////////// %> <%-
+    include('../../layouts/header') %>
+    <!-- Your code here -->
+    <h1 class="articles__h1">Articles Page</h1>
+    <div class="articles_contanier">
+      <% articlesDataforCustomer.forEach((item,index)=>{ %>
+      <section class="articles_result nav__link">
+        <img src="<%=item.image %>" />
+        <h2><%=item.title%></h2>
+        <h4>Written by: <%=item.author %></h4>
+        <h5><%=item.date %></h5>
+
+        <form action="/articles/article/<%=item.id%>">
+          <button type="submit" id="articles_btn">Read more →</button>
+        </form>
+      </section>
+      <%})%>
+    </div>
+    <!--  end   -->
+    <%- include('../../layouts/footer') %> <%- include('../../layouts/scripts')
+    %>
+  </body>
+</html>

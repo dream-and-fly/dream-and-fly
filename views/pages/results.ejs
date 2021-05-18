@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../layouts/head') %>
+  <body>
+    <% var today = new Date(); %> <% var date
+    =today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(); ////// %>
+    <% console.log(date) //////////////////// %> <%-
+    include('../layouts/header') %>
+    <div class="results__main"></div>
+    <!-- Your code here -->
+    <section class="resutls__youtube__section">
+      <div class="main__container">
+        <h2 class="special-heading">Media</h2>
+        <p>Explore what you are looking for</p>
+        <div class="resutls__youtube__div">
+          <% youTubeApi.forEach((element)=>{ %>
+          <div>
+            <iframe
+              width="350"
+              height="250"
+              src="https://www.youtube.com/embed/<%= element.videoID %> "
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <section class="results__country__info__section">
+      <div class="main__container">
+        <h2 class="special-heading">Info</h2>
+        <p>Know more about your destination country</p>
+        <div class="resutls__three_data">
+          <div class="country data">
+            <img class="country__img" src="<%= countryApi.flag%>" />
+            <div class="country__data">
+              <h3 class="country__name"><%= countryApi.countryName%></h3>
+              <h4 class="country__region"><%= countryApi.region%></h4>
+              <p class="country__row">
+                <span>👫</span><%= countryApi.population%>
+              </p>
+              <p class="country__row">
+                <span>🗣️</span><%= countryApi.language%>
+              </p>
+              <p class="country__row">
+                <span>💰</span><%= countryApi.currencies%>
+              </p>
+            </div>
+          </div>
+          <div class="country weather">
+            <img class="country__img" src="/img/results/weather.jpg" />
+            <div class="country__data">
+              <h3 class="country__name">
+                <%= Number(weatherApi.temp)>=10 ? `${weatherApi.temp} °C
+                🌞`:`${weatherApi.temp} °C 🥶` %>
+              </h3>
+              <h4 class="country__region unvisible">REGION</h4>
+              <p class="country__row">
+                <%= Number(weatherApi.feelsLike)>=10 ? `Feelslike :
+                ${weatherApi.feelsLike} °C 🥵`:`Feelslike:
+                ${weatherApi.feelsLike} °C 🥶` %>
+              </p>
+              <p class="country__row">
+                <%= Number(weatherApi.minTemp)>=10 ? `minTemp :
+                ${weatherApi.minTemp} °C 🥵`:`minTemp: ${weatherApi.minTemp} °C
+                🥶` %>
+              </p>
+              <p class="country__row">
+                <%= Number(weatherApi.maxTemp)>=10 ? `maxTemp :
+                ${weatherApi.maxTemp} °C 🥵`:`maxTemp: ${weatherApi.maxTemp} °C
+                🥶` %>
+              </p>
+            </div>
+          </div>
+          <div class="country covid">
+            <img class="country__img" src="/img/results/covid.png" />
+            <div class="country__data">
+              <h3 class="country__name">Covid-19</h3>
+              <h4 class="country__region">Data</h4>
+              <p class="country__row"><span>😷</span><%= covidApi.now%></p>
+              <p class="country__row">
+                <span>💪</span><%= covidApi.recovered%>
+              </p>
+              <p class="country__row"><span>💀</span><%= covidApi.deaths%></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resutls__map__section">
+      <div class="main__container">
+        <h2 class="special-heading">Map</h2>
+        <p>We drive you through your destination</p>
+        <div class="resutls__map__div">
+          <div id="map"></div>
+        </div>
+      </div>
+    </section>
+    <% if (DBresults.length !== 0) { %>
+    <section class="resutls__DB__section">
+      <div class="main__container">
+        <h2 class="special-heading">reviews</h2>
+        <p>Know more about your destination country</p>
+        <div class="resutls__DB__div">
+          <div class="results__DB__div__head">
+            <h1>
+              <%= `${DBresults[0].city[0].toUpperCase() +
+              DBresults[0].city.slice(1)}` %> reviews
+            </h1>
+            <button id="showForm">Post a review</button>
+          </div>
+          <hr />
+          <div class="results__DB__div__form hide" id="results__form">
+            <form class="results__DB__form" action="/results" method="post">
+              <input type="text" name="title" placeholder="Review title" />
+              <input type="text" name="author" placeholder="Your Name" />
+              <label for="rating">rating: </label>
+              <select name="rating" id="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <input
+                type="hidden"
+                name="city"
+                value="<%= DBresults[0].city%>"
+                placeholder="Your Name"
+              />
+              <input
+                type="hidden"
+                name="date"
+                value="<%= date%>"
+                placeholder="Your Name"
+              />
+              <textarea
+                name="description"
+                placeholder="Write your review"
+                id=""
+                cols="30"
+                rows="10"
+              ></textarea>
+              <input type="submit" />
+            </form>
+          </div>
+          <div class="results__DB__div__main">
+            <% DBresults.forEach((element)=>{ %>
+            <div class="results__review__div">
+              <img src="/img/results/profileplaceholder.png" alt="" />
+              <div class="results__review">
+                <h2><%= element.title %></h2>
+                <h3><%= element.author %></h3>
+                <p class="date"><%= element.date %></p>
+                <hr />
+                <p>
+                  <img
+                    src="/img/results/<%=element.rating%>.jpg"
+                    alt=""
+                    class="results__ratings"
+                  /><%= element.description %>
+                </p>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </section>
+    <% } else { %>
+    <section class="resutls__DB__section">
+      <div class="main__container">
+        <h2 class="special-heading">reviews</h2>
+        <p>Know more about your destination country</p>
+        <div class="resutls__DB__div">
+          <div class="results__DB__div__head">
+            <h1>
+              Add a review for <%= `${city[0].toUpperCase() + city.slice(1)}` %>
+            </h1>
+          </div>
+          <hr />
+          <div class="results__DB__div__form" id="results__form">
+            <form class="results__DB__form" action="/results" method="post">
+              <input type="text" name="title" placeholder="Review title" />
+              <input type="text" name="author" placeholder="Your Name" />
+              <label for="rating">rating: </label>
+              <select name="rating" id="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <input
+                type="hidden"
+                name="city"
+                value="<%= city%>"
+                placeholder="Your Name"
+              />
+              <input
+                type="hidden"
+                name="date"
+                value="<%= date%>"
+                placeholder="Your Name"
+              />
+              <textarea
+                name="description"
+                placeholder="Write your review"
+                id=""
+                cols="30"
+                rows="10"
+              ></textarea>
+              <input type="submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <% } %> <%- include('../layouts/footer') %> <%-
+    include('../layouts/scripts') %>
+    <script>
+      const btnHandler = function () {
+        console.log("here");
+        let formSection = document.getElementById("results__form");
+        formSection.classList.toggle("hide");
+      };
+      let btn = document.getElementById("showForm");
+      btn.addEventListener("click", btnHandler);
+    </script>
+    <script>
+      function initMap() {
+        let location = { lat: <%= weatherApi.lat%>, lng: <%= weatherApi.lon%> };
+        let map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 10,
+          center: location,
+        });
+        let marker = new google.maps.Marker({
+          position: location,
+          map: map,
+        });
+      }
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKimxOAALz2rpF4TXGOpLNHfWe4HpxKzo&callback=initMap"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../../layouts/head') %>
+
+  <body>
+    <%- include('../../layouts/header') %>
+    <!-- Your code here -->
+    <main>
+      <div class="articleOne">
+        <img src="<%=oneArticleData.image %>" />
+        <h2><%=oneArticleData.title%></h2>
+        <h4>Article by: <%=oneArticleData.author %></h4>
+        <h5><%=oneArticleData.date %></h5>
+        <p><%=oneArticleData.description %></p>
+      </div>
+    </main>
+    <%- include('../../layouts/footer') %> <%- include('../../layouts/scripts')
+    %>
+  </body>
+</html>

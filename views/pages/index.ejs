@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../layouts/head') %>
+  <body>
+    <div class="homepage__body">
+      <%- include('../layouts/header') %>
+      <!-- Your code here -->
+      <main class="homepage__main">
+        <section class="homepage__section__1">
+          <section class="detail-box">
+            <p class="detail-box-content-1">
+              UNLIMITED <br />
+              HORIZONS
+            </p>
+            <p class="detail-box-content-2">
+              DON`T BE AFRAID <br />
+              OF DREAMING
+            </p>
+          </section>
+
+          <section class="homepage__form__section">
+            <form action="/results/" method="GET" class="homepage__searchform">
+              <input
+                name="search_query"
+                type="text"
+                placeholder="Search cites & travel"
+                class="homepage__searchbar"
+              />
+
+              <br />
+              <button class="homepage__search__btn">Search</button>
+            </form>
+          </section>
+        </section>
+
+        <!-- <section class="explor">
+          <a href="#articles-explor"
+            ><button class="explor-button">EXPLORE</button></a
+          >
+        </section> -->
+        <section class="articles__sections" id="articles-explor">
+          <div class="aticles-text">
+            <div class="about-site">
+              <!-- <div class="homepage__overlay"></div> -->
+              <h4>GURANTEED 100%</h4>
+              <h2>DREAM & FLY</h2>
+              <p>
+                “Life is either a daring adventure, or nothing at all” – Helen
+                Keller
+                <br />
+                “I am not the same, having seen the moon shine on the other side
+                of the world.” – Mary Anne Radmacher<br />
+                Don’t tell me how educated you are, tell me how much you have
+                travelled.” – Mohammed<br />
+                “Travel is fatal to prejudice, bigotry, and narrow-mindedness.”
+                –Mark Twain
+              </p>
+              <div class="ver-line">
+                <h3>Dream with us</h3>
+                <p>
+                  “Surely, of all the wonders of the world, the horizon is the
+                  greatest.” – Freya Stark <br />“Travel isn’t always pretty. It
+                  isn’t always comfortable. Sometimes it hurts, it even breaks
+                  your heart. But that’s okay. <br />The journey changes you; it
+                  should change you. It leaves marks on your memory,<br />
+                  on your consciousness, on your heart, and on your body.<br />
+                  You take something with you. Hopefully, you leave something
+                  good behind.” – Anthony Bourdain
+                </p>
+              </div>
+              <a href="/about-us"
+                ><button class="about-us-btn">About Us</button></a
+              >
+            </div>
+          </div>
+          <div class="aticles-img">
+            <img src="img/homepage/plane.jpg" alt="" class="aticles-img" />
+          </div>
+        </section>
+
+        <section class="articles__sections2">
+          <div class="aticles-text1">
+            <h4>LEADING FOR GLORY</h4>
+            <h2>WORLDWIDE EXPERIENCE</h2>
+          </div>
+          <div class="articles__templete_div">
+            <div class="slider">
+              <% posts.forEach(element => { %>
+              <div class="slide">
+                <a href="/articles/article/<%= element.id %>?"
+                  ><h3><%= element.title %></h3></a
+                >
+
+                <img src="<%= element.image %>" alt="" />
+              </div>
+              <% }) %>
+              <button class="slider__btn slider__btn--left invisible">
+                &larr;
+              </button>
+              <button class="slider__btn slider__btn--right invisible">
+                &rarr;
+              </button>
+              <div class="dots"></div>
+            </div>
+          </div>
+        </section>
+
+        <section></section>
+      </main>
+      <%- include('../layouts/footer') %>
+    </div>
+    <%- include('../layouts/scripts') %>
+  </body>
+</html>

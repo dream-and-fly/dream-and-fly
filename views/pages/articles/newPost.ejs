@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../../layouts/head') %>
+
+  <body>
+    <%- include('../../layouts/header') %>
+    <!-- Your code here -->
+    <div class="AddingNewPost__Container">
+      <!-- <h2>Add an Article</h2> -->
+      <h1>Add New Post</h1>
+      <section class="left__section__forAddingNewPost">
+        <form
+          class="inner-leftSection"
+          action="/articles/admin/new-post"
+          method="POST"
+        >
+          <input type="text" name="author" placeholder="author" /><br />
+          <input type="text" name="title" placeholder="title" /><br />
+          <input type="text" name="image" placeholder="imageURL" /><br />
+
+          <textarea
+            name="description"
+            id="description"
+            cols="30"
+            rows="10"
+            placeholder="Write ..."
+          ></textarea
+          ><br />
+
+          <button class="newPost_btns">ADD</button>
+        </form>
+      </section>
+    </div>
+
+    <script>
+      function myFunction() {
+        console.log(event.target.id);
+        $(`.__admin_update${event.target.id}`).show();
+        $(`#${event.target.id}`).hide();
+        $(`.__admin_update_btn_form${event.target.id}`).show();
+      }
+    </script>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <%- include('../../layouts/footer') %> <%- include('../../layouts/scripts')
+    %>
+  </body>
+</html>
