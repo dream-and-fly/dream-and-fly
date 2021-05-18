@@ -1,11 +1,10 @@
-.aboutUs_body {
+/* .aboutUs_body {
   background-image: url("/img/about-us/background.jpg");
-  /* background-repeat: no-repeat; */
   width: 100%;
   height: 100%;
-}
+} */
 
-@keyframes yourAnimation {
+/* @keyframes yourAnimation {
   0% {
     transform: skewX(15deg);
     width: 0;
@@ -21,10 +20,10 @@
   100% {
     box-shadow: rgb(65, 65, 65) 4px 4px 5px;
   }
-}
+} */
 
 /* laptops */
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .aboutUs_team {
     width: 80%;
     margin-left: 10%;
@@ -156,10 +155,10 @@
     margin-left: 25%;
     margin-bottom: 130px;
   }
-}
+} */
 
 /* Tablet */
-@media (min-width: 800px) and (max-width: 1199px) {
+/* @media (min-width: 800px) and (max-width: 1199px) {
   .aboutUs_team {
     width: 80%;
     margin-left: 15%;
@@ -203,9 +202,7 @@
     position: absolute;
     animation: yourAnimation 1s forwards 0s ease-in;
   }
-  /* div:hover {
-    z-index: 1;
-  } */
+
   .aboutUs_memberThree {
     background-color: white;
 
@@ -314,14 +311,13 @@
     margin-bottom: 80px;
     margin-left: 25%;
   }
-}
+} */
 
 /* Mopile */
-@media (max-width: 799px) {
+/* @media (max-width: 799px) {
   .aboutUs_team {
     width: 80%;
     margin-left: 10%;
-    /* height: 700px; */
   }
 
   .aboutUs_memberOne {
@@ -465,4 +461,4 @@
     margin-left: 25%;
     margin-bottom: 80px;
   }
-}
+} */

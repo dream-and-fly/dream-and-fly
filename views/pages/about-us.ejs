@@ -1,129 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../layouts/head') %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        color: white;
+        width: 100%;
+        /* height: 100vh; */
+        background-image: linear-gradient(35deg, #28b6cc, #287fcc);
+      }
+      .container {
+        width: 100%;
+        /* height: 100vh; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-left: 10%;
+      }
+      .card {
+        position: relative;
+        width: 250px;
+        background-image: linear-gradient(
+          rgba(255, 255, 255, 0.4),
+          rgba(255, 255, 255, 0.1)
+        );
+        margin: 30px 80px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.6);
+        transform-style: preserve-3d;
+        transform-origin: center;
+        transform: perspective(1000px) rotateY(90deg);
+        transition: 0.5s ease-in;
+      }
+      .card:hover {
+        transform: rotateY(0deg);
+      }
+      .card2 {
+        transform: rotateY(53deg) !important;
+        left: 2%;
+        width: 280px;
+        height: 45%;
+      }
+      h1 {
+        font-size: 20px;
+        line-height: 50px;
+        text-transform: capitalize;
+      }
+      p {
+        text-align: center;
+        line-height: 20px;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        margin: 30px 0;
+      }
+      li {
+        margin: 0 8px;
+      }
+      a {
+        font-size: 18px;
+        color: #000;
+      }
+      button {
+        width: 120px;
+        height: 30px;
+        border: 0;
+        outline: none;
+        background-image: linear-gradient(35deg, #287fcc, #28b6cc);
+        text-transform: capitalize;
+        font-weight: 500;
+        color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.6);
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        transform-style: preserve-3d;
+        transform-origin: left;
+        transform: rotateY(-300deg);
+      }
+      .card1::before {
+        background-image: url(/img/about-us/abdelhadi.jpg);
+        background-position: left;
+      }
+      .card2::before {
+        background-image: url(/img/about-us/abdullah.jpg);
+        transform: rotateY(-200deg);
+      }
+
+      .card3::before {
+        background-image: url(/img/about-us/Amarah.jpg);
+        background-position: left;
+      }
+      .card4::before {
+        background-image: url(/img/about-us/ayman.jpg);
+      }
+      .card5::before {
+        background-image: url(/img/about-us/tareq.jpg);
+      }
+      /*-------------icons------------*/
+
+      i {
+        /* width: 50px; */
+        /* background-color: aqua; */
+        /* color: rebeccapurple; */
+        font-size: 26px;
+      }
+    </style>
+  </head>
 
   <body class="aboutUs_body">
     <%- include('../layouts/header') %>
     <!-- Your code here -->
+    <div class="container">
+      <div class="card card1">
+        <h1>Team Member</h1>
+        <h4>Abdelhadi Nofal</h4>
+        <br />
+        <p>
+          27 years old, with Bachelor degree in Civil engineering. Abdel Hadi is
+          passionate about website design and programming.
+        </p>
+        <ul>
+          <li>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </li>
+        </ul>
+        <button>visit profile</button>
+      </div>
+      <div class="card card2">
+        <h1>Team Leader:</h1>
+        <h4>Abdullah AlSawalmeh</h4>
+        <br />
+        <p>
+          26 years old, with M.Sc. degree in Mechatronics engineering. Abdullah
+          is passionate about learning more about programming.
+        </p>
+        <ul>
+          <li>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </li>
+        </ul>
+        <button>visit profile</button>
+      </div>
+      <div class="card card3">
+        <h1>Team Member:</h1>
+        <h4>Amarah abusohyon</h4>
+        <br />
+        <p>
+          24 years old, with Bachelor degree in Biomedical Informatics
+          engineering. Amarah is passionate about programming and deep learning.
+        </p>
+        <ul>
+          <li>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </li>
+        </ul>
+        <button>visit profile</button>
+      </div>
+      <div class="card card4">
+        <h1>Team Member:</h1>
+        <h4>Ayman Naif</h4>
+        <br />
+        <p>
+          25 years old, with B.Sc. degree in Electrical engineering. he is
+          enthusiastic about learning programming and having new experiences.
+        </p>
+        <ul>
+          <li>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </li>
+        </ul>
+        <button>visit profile</button>
+      </div>
+      <div class="card card5">
+        <h1>Team Member:</h1>
+        <h4>Tareq Megdadi</h4>
+        <br />
+        <p>
+          29 years old, with MS degree in Computer science. Tareq is passionate
+          about learning more about programming and hope to be the CEO of my
+          self.
+        </p>
+        <ul>
+          <li>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </li>
+        </ul>
+        <button>visit profile</button>
+      </div>
+    </div>
 
-    <main>
-      <h2 class="aboutUs_h2">Meet The Team</h2>
-      <hr class="line" />
-      <section class="aboutUs_team">
-        <div class="aboutUs_common aboutUs_memberOne">
-          <img
-            class="aboutUs_img imgOne"
-            src="/img/about-us/abdullah.jpg"
-            alt=""
-          />
-          <h3 class="aboutUs_h3">Team Leader:</h3>
-          <h4 class="aboutUs_h4">Abdullah AlSawalmeh</h4>
-          <p class="aboutUs_p">
-            26 years old, with M.Sc. degree in Mechatronics engineering.
-            Abdullah is passionate about learning more about programming.
-          </p>
-          <div class="aboutUs_contact">
-            <a href="#" class="aboutUs_github"
-              ><img src="/img/about-us/GitHub-Mark-32px.png" alt=""
-            /></a>
-
-            <a href="#" class="aboutUs_linkedIn"
-              ><img src="/img/about-us/linkedIn_PNG38.png" alt=""
-            /></a>
-          </div>
-        </div>
-        <div class="aboutUs_common aboutUs_memberTwo">
-          <img
-            class="aboutUs_img imgTwo"
-            src="/img/about-us/ayman.jpg"
-            alt=""
-          />
-          <h3 class="aboutUs_h3">Team Member:</h3>
-          <h4 class="aboutUs_h4">Ayman Naif</h4>
-          <p class="aboutUs_p">
-            25 years old, with B.Sc. degree in Electrical engineering. he is
-            enthusiastic about learning programming and having new experiences.
-          </p>
-          <div class="aboutUs_contact">
-            <a href="#" class="aboutUs_github"
-              ><img src="/img/about-us/GitHub-Mark-32px.png" alt=""
-            /></a>
-
-            <a href="#" class="aboutUs_linkedIn"
-              ><img src="/img/about-us/linkedIn_PNG38.png" alt=""
-            /></a>
-          </div>
-        </div>
-        <div class="aboutUs_common aboutUs_memberThree">
-          <img
-            class="aboutUs_img imgThree"
-            src="/img/about-us/Amarah.jpg"
-            alt=""
-          />
-          <h3 class="aboutUs_h3">Team Member:</h3>
-          <h4 class="aboutUs_h4">Amarah abusohyon</h4>
-          <p class="aboutUs_p">
-            24 years old, with Bachelor degree in Biomedical Informatics
-            engineering. Amarah is passionate about programming and deep
-            learning
-          </p>
-          <div class="aboutUs_contact">
-            <a href="#" class="aboutUs_github"
-              ><img src="/img/about-us/GitHub-Mark-32px.png" alt=""
-            /></a>
-
-            <a href="#" class="aboutUs_linkedIn"
-              ><img src="/img/about-us/linkedIn_PNG38.png" alt=""
-            /></a>
-          </div>
-        </div>
-        <div class="aboutUs_common aboutUs_memberFour">
-          <img
-            class="aboutUs_img imgFour"
-            src="/img/about-us/tareq.jpg"
-            alt=""
-          />
-          <h3 class="aboutUs_h3">Team Member:</h3>
-          <h4 class="aboutUs_h4">Tareq Megdadi</h4>
-          <p class="aboutUs_p">
-            29 years old, with MS degree in Computer science. Tareq is
-            passionate about learning more about programming and hope to be the
-            CEO of my self.
-          </p>
-          <div class="aboutUs_contact">
-            <a href="#" class="aboutUs_github"
-              ><img src="/img/about-us/GitHub-Mark-32px.png" alt=""
-            /></a>
-
-            <a href="#" class="aboutUs_linkedIn"
-              ><img src="/img/about-us/linkedIn_PNG38.png" alt=""
-            /></a>
-          </div>
-        </div>
-        <div class="aboutUs_common aboutUs_memberFive">
-          <img
-            class="aboutUs_img imgFive"
-            src="/img/about-us/abdelhadi.jpg"
-            alt=""
-          />
-          <h3 class="aboutUs_h3">Team Member:</h3>
-          <h4 class="aboutUs_h4">Abdelhadi Nofal</h4>
-          <p class="aboutUs_p">
-            27 years old, with Bachelor degree in Civil engineering. Abdel Hadi
-            is passionate about website design and programming.
-          </p>
-          <div class="aboutUs_contact">
-            <a href="#" class="aboutUs_github"
-              ><img src="/img/about-us/GitHub-Mark-32px.png" alt=""
-            /></a>
-
-            <a href="#" class="aboutUs_linkedIn"
-              ><img src="/img/about-us/linkedIn_PNG38.png" alt=""
-            /></a>
-          </div>
-        </div>
-      </section>
-    </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/public/js/app.js"></script>
     <%- include('../layouts/footer') %> <%- include('../layouts/scripts') %>
