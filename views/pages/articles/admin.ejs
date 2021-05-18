@@ -20,21 +20,19 @@
 
           <% articlesData.forEach((item,index)=>{ %>
             <section class="admin__admin_article">
-              <img src="<%=item.image %>">
-              <div class="admin__admin__article__info">
-                <h2>
-                  <%=item.title%>
-                </h2>
-                <h4>
-                  Article by: <%=item.author %>
-                </h4>
-                <h5>
-                  <%=item.date %>
-                </h5></div>
-              
-              <!-- <h3>
-                  <%=item.description %>
-                </h3> -->
+              <div class="admin__admin__article__nonform">
+                <img src="<%=item.image %>">
+                <div class="admin__admin__article__info">
+                  <h2>
+                    <%=item.title%>
+                  </h2>
+                  <h4>
+                    Article by: <%=item.author %>
+                  </h4>
+                  <h5>
+                    <%=item.date %>
+                  </h5>
+                </div>
                 <div class="admin_admin_btnss">
                   <form class="__admin_add" action="/articles/admin" method="POST">
                     <input type="hidden" name="id" value="<%=item.id%>">
@@ -46,27 +44,34 @@
                   </form>
                   <button onclick="myFunction()" id="<%=item.id%>">UPDATE</button>
                 </div>
+                <%addedDataCheck.forEach(item2=>{%>
+                  <%if(item.id===item2.id){ %>
+                    <div class="border__right"></div>
+                    <%}%>
+                      <%})%>
+              </div>
+
+              
+              
 
 
+                <div class="admin__admin__article__form">
               <section class="admin__admin__update">
                 <section>
                   <form class="__admin_update __admin_update<%=item.id%>" action="/articles/admin?_method=put"
                     method="POST">
-                    <input type="text" name="title" value=" <%= item.title  %> " placeholder="title" />
-                    <input type="text" name="author" value="<%= item.author  %>" placeholder="author" />
-                    <input type="text" name="image" value="<%= item.image  %>" placeholder="image" />
-                    <textarea name="description" cols="30" rows="10" placeholder="description">
-                  <%= item.description  %></textarea>
-                    <input type="hidden" name="id" value="<%=item.id%>">
+                    <div class="form__div__div"><input type="text" name="title" value=" <%= item.title  %> " placeholder="title" />
+                      <input type="text" name="author" value="<%= item.author  %>" placeholder="author" />
+                      <input type="text" name="image" value="<%= item.image  %>" placeholder="image" />
+                      <textarea name="description" cols="30" rows="10" placeholder="description">
+                    <%= item.description  %></textarea>
+                      <input type="hidden" name="id" value="<%=item.id%>"></div>
+                    
                 </section>
                 <button class="__admin_update_btn_form  __admin_update_btn_form<%=item.id%>">UPDATE</button>
                 </form>
               </section>
-              <%addedDataCheck.forEach(item2=>{%>
-                <%if(item.id===item2.id){ %>
-                  <div class="border__right"></div>
-                  <%}%>
-                    <%})%>
+            </div>
             </section>
             <% }) %>
         </div>
